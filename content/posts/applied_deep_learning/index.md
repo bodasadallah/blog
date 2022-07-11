@@ -1,10 +1,10 @@
---- 
+---
 title: "Applied Deep Learning [Course](https://github.com/maziarraissi/Applied-Deep-Learning)"
 subtitle: ""
 description: "Long Course that gives a good breadth over many Deep Learning subjects. It covers topics by reviewing the research papers "
 date: "2022-02-01"
-tags: [deeplearning,python]
-categories: [deeplearning,python]]
+tags: [deeplearning, python]
+categories: [deeplearning, python]
 
 featuredImage: ""
 featuredImagePreview: ""
@@ -13,7 +13,6 @@ author: "Boda Sadallah"
 authorLink: "https://twitter.com/bodasdala"
 
 draft: false
-
 ---
 
 ## Reference
