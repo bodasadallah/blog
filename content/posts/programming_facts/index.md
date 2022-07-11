@@ -1,10 +1,21 @@
-# Programming Facts
-> Some facts that I learned by time
+--- 
+title: "Programming Facts"
+subtitle: "Some facts that I learned by time"
+description: "Some facts that I learned by time"
+date: "2022-05-23"
+tags: [life,python, programming]
+categories: [life,python, programming]
 
-- toc: true 
-- badges: true
-- comments: true
-- categories: [jupyter,life,python, programming]
+featuredImage: ""
+featuredImagePreview: ""
+
+author: "Boda Sadallah"
+authorLink: "https://twitter.com/bodasdala"
+
+draft: false
+
+---
+
 
 # Intro
 * this is intended to be some kind or reference to go through whenever I face some kind of bug, or error, that I don't know how to solve.usually these kinds of error that doesn't make sense, or we don't know the cause of them, and the worst it, that we don't find many ppl facing the same issue, so internet can't be so useful then. 

@@ -1,8 +1,22 @@
-### This is Post for Computational Linear Algebra 
+--- 
+title: "Computational Linear Algebra"
+subtitle: ""
+description: "This is Post for Computational Linear Algebra "
+date: "2021-10-02"
+tags: []
+categories: []
+
+featuredImage: ""
+featuredImagePreview: ""
+
+author: "Boda Sadallah"
+authorLink: "https://twitter.com/bodasdala"
+
+draft: false
+
+---
 
 # Lecture 1
-
-
 
 ```python
 import numpy as np

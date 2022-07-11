@@ -1,10 +1,21 @@
-# CS480/680
-> CS480/680 Intro to Machine Learning - Spring 2019 Course 
+--- 
+title: "CS480/680 Intro to Machine Learning"
+subtitle: ""
+description: "CS480/680 Intro to Machine Learning - Spring 2019 Course "
+date: "2021-12-14"
+tags: [deeplearning]
+categories: [deeplearning]
 
-- toc: true 
-- badges: true
-- comments: true
-- categories: [jupyter,Deep Learning]
+featuredImage: ""
+featuredImagePreview: ""
+
+author: "Boda Sadallah"
+authorLink: "https://twitter.com/bodasdala"
+
+draft: false
+
+---
+
 
 ## Lecture 12 
  

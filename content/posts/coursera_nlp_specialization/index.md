@@ -1,10 +1,22 @@
-# NLP Specialization 
-> Notebook for coursera's NLP Specialization 
 
-- toc: true 
-- badges: true
-- comments: true
-- categories: [jupyter,deeplearning,python,NLP]
+--- 
+title: "NLP Specialization"
+subtitle: "Notebook for coursera's NLP Specialization "
+description: ""
+date: "2022-01-30"
+tags: [deeplearning,python,NLP]
+categories: [deeplearning,python,NLP]
+
+featuredImage: ""
+featuredImagePreview: ""
+
+author: "Boda Sadallah"
+authorLink: "https://twitter.com/bodasdala"
+
+draft: false
+
+---
+
 
 
 # Course 1: Classification and vector Spaces

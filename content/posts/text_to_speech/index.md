@@ -1,10 +1,21 @@
-# TTS Research 
-> A summary research for TTS
+--- 
+title: "TTS Research"
+subtitle: "A summary research for TTS"
+description: "A summary research for TTS"
+date: "2021-10-14"
+tags: [TTS,Deeplearning]
+categories: [TTS,Deeplearning]
 
-- toc: true 
-- badges: true
-- comments: true
-- categories: [TTS,Deeplearning]
+featuredImage: ""
+featuredImagePreview: ""
+
+author: "Boda Sadallah"
+authorLink: "https://twitter.com/bodasdala"
+
+draft: false
+
+---
+
 
 
 ### TTS

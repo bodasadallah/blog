@@ -1,9 +1,21 @@
-# Univnet
-> Research for wavegan
-- toc: true 
-- badges: true
-- comments: true
-- categories: [jupyter,deeplearning,python,TTS]
+--- 
+title: "Univnet"
+subtitle: "Research for Vocoders"
+description: "Research for Vocoders"
+date: "2022-11-07"
+tags: [deeplearning,python,TTS]
+categories: [deeplearning,python,TTS]
+
+featuredImage: ""
+featuredImagePreview: ""
+
+author: "Boda Sadallah"
+authorLink: "https://twitter.com/bodasdala"
+
+draft: false
+
+---
+
 
 # TTS (Text To Speech)
 
@@ -92,7 +104,7 @@ Tacotron 2 is a neural network architecture for speech synthesis directly from t
 waveforms from those spectrograms.
 
 
-![Tacotron_arch](assets/tacotron_arch.png "Tacotron2 Architecture")
+![Tacotron_arch](tacotron_arch.png "Tacotron2 Architecture")
 
 
 
@@ -100,7 +112,7 @@ waveforms from those spectrograms.
 
 Parallel WaveGAN1, a distillation-free, fast, and small-footprint waveform generation method using a generative adversarial network. In the proposed method, a non-autoregressive WaveNet is trained by jointly optimizing multi-resolution spectrogram and adversarial loss functions, which can effectively capture the time-frequency distribution of the realistic speech waveform. As our method does not require density distillation used in the conventional teacher-student framework, the entire model can be easily trained even with a small number of parameters. In particular, the proposed Parallel WaveGAN has only 1.44 M parameters and can generate 24 kHz speech waveform 28.68 times faster than real-time on a single GPU environment. Perceptual listening test results verify that our proposed method achieves 4.16 mean opinion score within a Transformer-based text-to-speech framework, which is comparative to the best distillation-based Parallel WaveNet system.
 
-![Parallel_WaveGan_arch](assets/parallel_wavegan_arch.png "Parallel WaveGan Architecture")
+![Parallel_WaveGan_arch](parallel_wavegan_arch.png "Parallel WaveGan Architecture")
 
 
 #### Univnet
@@ -114,7 +126,7 @@ employs spectrograms of multiple resolutions as the input
 
 
 
-![Univnet_arch](assets/univnet_arch.png "Univnet Architecture")
+![Univnet_arch](univnet_arch.png "Univnet Architecture")
 
 
 ### Resources 

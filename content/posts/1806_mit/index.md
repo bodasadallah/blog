@@ -15,9 +15,6 @@ authorLink: "@bodasdala"
 draft: false
 ---
 
-![1](images/mit_ocw.png)
-![2](/images/mit_ocw.png)
-
 ## Lecture 1
 
 We learn about the big picture behind multiplication of matrix and vector

@@ -1,10 +1,20 @@
-# Scribbles Notebook 
-> A bunch of very different topics scribbles 
+--- 
+title: "Scribbles"
+subtitle: "A bunch of very different topics scribbles "
+description: "A bunch of very different topics scribbles"
+date: "2021-10-27"
+tags: [deeplearning,python]
+categories: [deeplearning,python]
 
-- toc: true 
-- badges: true
-- comments: true
-- categories: [jupyter,deeplearning,python]
+featuredImage: ""
+featuredImagePreview: ""
+
+author: "Boda Sadallah"
+authorLink: "https://twitter.com/bodasdala"
+
+draft: false
+
+---
 
 
 ## Transformers 
@@ -178,7 +188,7 @@ Optimizer Step: From the optimizer’s perspective, it is optimizing a local mod
 ### DL 
 * is a representation learning algorithms that is applied in multi sequential manner
 
-![](assets/learning-paradigms.png)
+![](learning-paradigms.png)
 
 ### CH2
 
@@ -263,3 +273,10 @@ Optimizer Step: From the optimizer’s perspective, it is optimizing a local mod
 * we start with the original image, then we keep add noise to it till it become so noisy
 * then we try to reverse the operation and get it back to the input image  
 
+
+## P vs NP
+
+* P = problems solvable in polynomial time
+* NP = decision problems solvable in nondeterministic polynomial time
+    - decision problems = yes, no problems 
+    - NP problems are hard to solve, but each to check the correctness of the answers 

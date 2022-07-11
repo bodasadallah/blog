@@ -1,10 +1,22 @@
-# FastAi 2020
-> A summary for FastAi Practical deep learning for coders course.
 
-- toc: true 
-- badges: true
-- comments: true
-- categories: [jupyter,FastAi]
+--- 
+title: "FastAi 2020"
+subtitle: ""
+description: "A summary for FastAi Practical deep learning for coders course."
+date: "2021-10-06"
+tags: [FastAi]
+categories: [FastAi]
+
+featuredImage: ""
+featuredImagePreview: ""
+
+author: "Boda Sadallah"
+authorLink: "https://twitter.com/bodasdala"
+
+draft: false
+
+---
+
 
 
 ### Lecture two

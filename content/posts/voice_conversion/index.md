@@ -1,10 +1,22 @@
-# Voice Conversion
-> A Research notebook, for Voice conversion models 
+--- 
+title: "Voice Conversion"
+subtitle: "A Research notebook, for Voice conversion models "
+description: "A Research notebook, for Voice conversion models "
+date: "2021-11-21"
+tags: [deepdearning, VoiceConversion]
+categories: [deepdearning, VoiceConversion]
 
-- toc: true 
-- badges: true
-- comments: true
-- categories: [jupyter,DeepLearning, VoiceConversion]
+featuredImage: ""
+featuredImagePreview: ""
+
+author: "Boda Sadallah"
+authorLink: "https://twitter.com/bodasdala"
+
+draft: false
+
+---
+# 
+
 
 
 ## AutoVC

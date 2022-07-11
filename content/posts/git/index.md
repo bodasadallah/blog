@@ -1,11 +1,20 @@
-# GIT
-> Trying to get familiar and understand git more 
+--- 
+title: "GIT"
+subtitle: ""
+description: "Trying to get familiar and understand git more "
+date: "2022-03-15"
+tags: [git,version-control]
+categories: [git,version-control]
 
-- toc: true 
-- badges: true
-- comments: true
-- categories: [jupyter,git,version-control]
+featuredImage: ""
+featuredImagePreview: ""
 
+author: "Boda Sadallah"
+authorLink: "https://twitter.com/bodasdala"
+
+draft: false
+
+---
 
 ## Beatiful commands
 

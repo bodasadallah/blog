@@ -1,9 +1,21 @@
-# Python Notebook 
-> Python trics 
-- toc: true 
-- badges: true
-- comments: true
-- categories: [jupyter,python]
+--- 
+title: "Python"
+subtitle: ""
+description: "Python tricks "
+date: "2021-11-10"
+tags: [python]
+categories: [python]
+
+featuredImage: ""
+featuredImagePreview: ""
+
+author: "Boda Sadallah"
+authorLink: "https://twitter.com/bodasdala"
+
+draft: false
+
+---
+
 
 ## Inheritance 
 

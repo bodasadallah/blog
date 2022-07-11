@@ -1,10 +1,21 @@
-# Deep Learning Papers Summarization 
-> A Summary of DL papers
+--- 
+title: "Deep Learning Papers Summarization "
+subtitle: "A Summary of DL papers"
+description: "A Summary of DL papers"
+date: "2022-04-22"
+tags: [deeplearning,python]
+categories: [deeplearning,python]
 
-- toc: true 
-- badges: true
-- comments: true
-- categories: [jupyter,deeplearning,python]
+featuredImage: ""
+featuredImagePreview: ""
+
+author: "Boda Sadallah"
+authorLink: "https://twitter.com/bodasdala"
+
+draft: false
+
+---
+
 
 ## Decoupled Neural Interfaces using Synthetic Gradients
 
@@ -50,5 +61,18 @@
 #### KG Completion and Integration
 * most of the known KGs has many fields empty, and there's a going research in how to deal with that and fill the gaps.
 * some methods try to do that using intra-graph knowledge augmentation or with inter-graph.
+
+
+
+## Denoising Diffusion Probabilistic Models 
+
+Forward diffusion process: gradually keep adding noise to the original image till it's destroyed 
+
+* the main task is to reverse the noising procedure, so then we can learn the underlying data distribution, then we can generate images from it 
+
+* instead of calculating the steps of the forward diffusion process sequently, we can  combine all the steps in one step, by sampling from a distributuion which have mean of the product of all means in each step
+
+$\begin{aligned} q(x_t | x_0) =  x_t \sim \mathcal{N}( \sqrt{\bar \alpha}  x_0 , (1 - \bar \alpha ) \mathcal{I})\end{aligned}$
+
 
 

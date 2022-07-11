@@ -1,10 +1,20 @@
-# Mind Exercise
-> A bunch of topics and ideas that popped into my head, tryin to understand life
+--- 
+title: "Mind Exercise"
+subtitle: ""
+description: "A bunch of topics and ideas that popped into my head, trying to understand life"
+date: "2022-03-13"
+tags: [life,python]
+categories: [life,python]
 
-- toc: true 
-- badges: true
-- comments: true
-- categories: [jupyter,life,python]
+featuredImage: ""
+featuredImagePreview: ""
+
+author: "Boda Sadallah"
+authorLink: "https://twitter.com/bodasdala"
+
+draft: false
+
+---
 
 
 ## Sad Thoughts
@@ -48,7 +58,7 @@ We can model our progress as one of two:
 ### Gaussian Like Progress:
 Just like the below Photo, we can observe our progress with exponential growth in the beginning. Then, we would be just starting, and we would be filled with energy. Then, we do a lot of efforts  and end up burnt out, and go down again.
 
-![](assets/gaussian.jpeg)
+![](gaussian.jpeg)
 
 
 ### Slow stable increase
@@ -58,7 +68,7 @@ The other model, would be small increase that keeps increasing by time, till we 
 Prophet Mohammed(PBUH) said: The best deeds are those which are stable, even if they are small
 ```
 
-![](assets/increasing.jpeg)
+![](increasing.jpeg)
 
 
 ## I will 
