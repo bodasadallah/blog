@@ -1,9 +1,10 @@
-# Applied Deep Learning [Course](https://github.com/maziarraissi/Applied-Deep-Learning)
+# Applied Deep Learning
 
 
 ## Reference
 
-[Repo with the slides, and course info](https://github.com/maziarraissi/Applied-Deep-Learning)
+- [Course](https://github.com/maziarraissi/Applied-Deep-Learning)
+- [Repo with the slides, and course info](https://github.com/maziarraissi/Applied-Deep-Learning)
 
 ## Deep Learning overview
 
