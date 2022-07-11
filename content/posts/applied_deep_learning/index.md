@@ -1,5 +1,5 @@
 ---
-title: "Applied Deep Learning [Course](https://github.com/maziarraissi/Applied-Deep-Learning)"
+title: "Applied Deep Learning"
 subtitle: ""
 description: "Long Course that gives a good breadth over many Deep Learning subjects. It covers topics by reviewing the research papers "
 date: "2022-02-01"
@@ -17,7 +17,8 @@ draft: false
 
 ## Reference
 
-[Repo with the slides, and course info](https://github.com/maziarraissi/Applied-Deep-Learning)
+- [Course](https://github.com/maziarraissi/Applied-Deep-Learning)
+- [Repo with the slides, and course info](https://github.com/maziarraissi/Applied-Deep-Learning)
 
 ## Deep Learning overview
 

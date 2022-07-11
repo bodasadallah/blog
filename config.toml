@@ -166,7 +166,7 @@ languageName = "English"
       # Gravatar Email for preferred avatar in home page
       gravatarEmail = ""
       # URL of avatar shown in home page
-      avatarURL = "images/profile.jpg"
+      avatarURL = ""
       #  title shown in home page (HTML format is supported)
       title = "Boda Blog"
       # subtitle shown in home page (HTML format is supported)
