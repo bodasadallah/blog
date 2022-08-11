@@ -698,3 +698,17 @@ $ f({y_i}) = \max(0,y_i) + a_i \min(0, y_i) $
 - we want to have my many Subword tokenization for the same word
 - the multiple subword tokenization works like kind of data augmentation, and also adds a regularization effect
 
+## Transformers are RNNs
+
+* The idea is that we don't have to use softmax fuction, to caputer the similarity between two tokens, we can use any other suitable function.
+
+## ELMo
+
+* We need to have multible word representation for the same words, depending on the context.
+### Forward language model
+* you predict the next word given the previous words
+
+### Backward language model
+* you predict the next word given the next words
+
+
