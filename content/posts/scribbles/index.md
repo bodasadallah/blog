@@ -280,3 +280,10 @@ Optimizer Step: From the optimizer’s perspective, it is optimizing a local mod
 * NP = decision problems solvable in nondeterministic polynomial time
     - decision problems = yes, no problems 
     - NP problems are hard to solve, but each to check the correctness of the answers 
+
+
+## Expectation Maximization
+
+* If we have a probability distribution that is function of two variables, one is observable and the other is latent and we want to calculate the MLE for this model.
+* Then we can calculate the marginal likelihood instead
+* The marginal probability basically means that we take the summation over all possible states of the latent variable
