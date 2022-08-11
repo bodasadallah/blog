@@ -2,7 +2,7 @@
 title: "Distributed Training in PyTorch"
 subtitle: "Overview of some options available for multi[-node training in pytorch"
 description: ""
-date: "2022-8-11"
+date: "2022-08-11"
 tags: [pytorch, python, distributed_training]
 categories: [pytorch, python, distributed_training]
 
