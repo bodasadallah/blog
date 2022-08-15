@@ -700,15 +700,20 @@ $ f({y_i}) = \max(0,y_i) + a_i \min(0, y_i) $
 
 ## Transformers are RNNs
 
-* The idea is that we don't have to use softmax fuction, to caputer the similarity between two tokens, we can use any other suitable function.
+- The idea is that we don't have to use softmax fuction, to caputer the similarity between two tokens, we can use any other suitable function.
 
 ## ELMo
 
-* We need to have multible word representation for the same words, depending on the context.
+- We need to have multible word representation for the same words, depending on the context.
+- we take all hidden repreasentations from all LSTM layers, in both forward, and backward
+
+- we then take the Elmo representation, and add it to the different tasks, we can add it in the input or the output, for our task-specific network
+- we can aslo finetune the elmo parameters in the downstream tasksdd
 ### Forward language model
-* you predict the next word given the previous words
+
+- you predict the next word given the previous words
 
 ### Backward language model
-* you predict the next word given the next words
 
+- you predict the next word given the next words
 
