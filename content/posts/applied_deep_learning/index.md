@@ -730,3 +730,34 @@ $ f({y_i}) = \max(0,y_i) + a_i \min(0, y_i) $
 ### Backward language model
 
 - you predict the next word given the next words
+
+## GPT1
+-  Just like Elmo, but use transformer decoder, instead of Lstm
+- your hidden repersentation contains, token embedding and position embedding
+
+- you have two outputs (heads)one for the downstream task, and another for the text prediction
+- Loss function is weighted average of the two losses
+
+## Bert
+- same concept of pre-training and fine-tuning
+- uses transformer encoder
+- you start by masking some of the input tokens
+- task two, is doing  "next sentence prediction"
+- we traing the model on those two tasks 
+- Position Embeddings could be learnable or fixed
+
+## GPT2
+- we used to predict the next word or sympol conditioned on previous words or tokens
+- it would be way better to condition on also the given task 
+- we want to do 'model-agnostic meta-learning'
+- they changed the input format to be probpts like `translate to Arabic, English text, Arabic text`
+
+- intersting thing about language, is that NLP tasks are similar
+- so they was able to answer some task-specific questions using zero-shot learning just based on the input prompt
+ 
+ ## ALBERT
+- they did factorized embedding parameterization
+- this does huge parameter reduction 
+- it has cross-layer parameter
+- they changed the second task 'NSP' to  `sentence-order prediction`, and this task is harder than the previous one, as the negative examples would be harder to lear, as the positive examples and negative ones are the same two sentences swapped 
+- they found that removing dropout helps the training 
