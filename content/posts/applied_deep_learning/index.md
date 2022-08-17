@@ -723,6 +723,7 @@ $ f({y_i}) = \max(0,y_i) + a_i \min(0, y_i) $
 
 - we then take the Elmo representation, and add it to the different tasks, we can add it in the input or the output, for our task-specific network
 - we can aslo finetune the elmo parameters in the downstream tasksdd
+
 ### Forward language model
 
 - you predict the next word given the previous words
@@ -732,32 +733,71 @@ $ f({y_i}) = \max(0,y_i) + a_i \min(0, y_i) $
 - you predict the next word given the next words
 
 ## GPT1
--  Just like Elmo, but use transformer decoder, instead of Lstm
+
+- Just like Elmo, but use transformer decoder, instead of Lstm
 - your hidden repersentation contains, token embedding and position embedding
 
 - you have two outputs (heads)one for the downstream task, and another for the text prediction
 - Loss function is weighted average of the two losses
 
 ## Bert
+
 - same concept of pre-training and fine-tuning
 - uses transformer encoder
 - you start by masking some of the input tokens
-- task two, is doing  "next sentence prediction"
-- we traing the model on those two tasks 
+- task two, is doing "next sentence prediction"
+- we traing the model on those two tasks
 - Position Embeddings could be learnable or fixed
 
 ## GPT2
+
 - we used to predict the next word or sympol conditioned on previous words or tokens
-- it would be way better to condition on also the given task 
+- it would be way better to condition on also the given task
 - we want to do 'model-agnostic meta-learning'
 - they changed the input format to be probpts like `translate to Arabic, English text, Arabic text`
 
 - intersting thing about language, is that NLP tasks are similar
 - so they was able to answer some task-specific questions using zero-shot learning just based on the input prompt
- 
- ## ALBERT
+
+## ALBERT
+
 - they did factorized embedding parameterization
-- this does huge parameter reduction 
+- this does huge parameter reduction
 - it has cross-layer parameter
-- they changed the second task 'NSP' to  `sentence-order prediction`, and this task is harder than the previous one, as the negative examples would be harder to lear, as the positive examples and negative ones are the same two sentences swapped 
-- they found that removing dropout helps the training 
+- they changed the second task 'NSP' to `sentence-order prediction`, and this task is harder than the previous one, as the negative examples would be harder to lear, as the positive examples and negative ones are the same two sentences swapped
+- they found that removing dropout helps the training
+
+## Roberta
+
+- bert was biased towards the masked tokens, so to fix that, they didn't mask all selected mask-tokens, but masked them with 80%, and left them unchanged with 10%, and replaced them with random vocab with 10%
+
+- Modifications on top of Bert:
+  - bigger dataset
+  - train for longer time
+  - change the masking pattern a bit
+  - replace NSP, with POS
+  - bigger bathces and bigger number of tokens
+
+## DistilBERT
+
+- we want to have a model that is compact for production
+- we use the knowledge distilattion technique
+- we train a small student model using a larger teacher model
+- we use the same sof-temperature form the student and teacher
+
+### Triple Loss
+
+- to get 97% of Bert acc, they needed to apply more loss
+- they trained the student model on small dataset, and introduced masked language modeling loss
+- they added cosine embedding loss, to align the directions of the student and teacher hidden states
+- in addition to the distilation loss
+
+## Transformer-XL
+
+- the idea is that we want to increase the context in the decoder to capture more data
+- for normal transformer, we only have fixed size context vector to caputre the previous data
+- but here, we take all the previous context with us in the forward pass,
+- but this can be huge to do back prop with it, so we stop the gradient for the extra context vectors
+- this means if our context size in 5 words, we will consider all previous context in the forward, but only calculate the gradient for jsut these last 5 words
+
+- in order for this to work, they made relative position encoding 

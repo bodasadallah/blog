@@ -287,3 +287,13 @@ Optimizer Step: From the optimizer’s perspective, it is optimizing a local mod
 * If we have a probability distribution that is function of two variables, one is observable and the other is latent and we want to calculate the MLE for this model.
 * Then we can calculate the marginal likelihood instead
 * The marginal probability basically means that we take the summation over all possible states of the latent variable
+
+### How it works
+
+- you have some samples, and you want to cluster them according to two distributions
+- you init the two ditros, randomly, and calculate the postrior that every sample belong to this distro
+- then you take the weighted average that every one of thees samples belong to the distro
+
+- it's like K-means except that we have probability that every sample belong to a distro, instead of 0-1 
+
+- we keep iterating till we reach the most accurate distros
