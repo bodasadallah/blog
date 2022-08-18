@@ -801,3 +801,19 @@ $ f({y_i}) = \max(0,y_i) + a_i \min(0, y_i) $
 - this means if our context size in 5 words, we will consider all previous context in the forward, but only calculate the gradient for jsut these last 5 words
 
 - in order for this to work, they made relative position encoding 
+
+
+
+## XLNet
+
+- the idea is that they wanted to gather the two ideas of Autoenconding and autoregressive language modeling
+
+- they did that by applying different permutations for the input sequence, instead of jsut the forward and backward products 
+
+
+## T5 
+- it's a text to text model (seq-to-seq)
+- in Bert model used to be biased towards mask tokens, so they masked with many different masks 
+- they masked consequtive tokens, not just one token per mask
+- Uses Prefix LM masking strategy 
+- uses sentence-piece tokenization (uni-gram encoding)
