@@ -761,7 +761,7 @@ $ f({y_i}) = \max(0,y_i) + a_i \min(0, y_i) $
   - bigger dataset
   - train for longer time
   - change the masking pattern a bit
-  - replace NSP, with POS
+  - replace NSP, with POS (forces the model to learn harder task, by flipping the order of two consequtive sentences)
   - bigger bathces and bigger number of tokens
 
 ## DistilBERT
@@ -786,20 +786,122 @@ $ f({y_i}) = \max(0,y_i) + a_i \min(0, y_i) $
 - but this can be huge to do back prop with it, so we stop the gradient for the extra context vectors
 - this means if our context size in 5 words, we will consider all previous context in the forward, but only calculate the gradient for jsut these last 5 words
 
-- in order for this to work, they made relative position encoding 
-
-
+- in order for this to work, they made relative position encoding
 
 ## XLNet
 
 - the idea is that they wanted to gather the two ideas of Autoenconding and autoregressive language modeling
 
-- they did that by applying different permutations for the input sequence, instead of jsut the forward and backward products 
+- they did that by applying different permutations for the input sequence, instead of jsut the forward and backward products
 
+## T5
 
-## T5 
 - it's a text to text model (seq-to-seq)
-- in Bert model used to be biased towards mask tokens, so they masked with many different masks 
+- Bert model used to be biased towards mask tokens, so they masked with many different masks
 - they masked consequtive tokens, not just one token per mask
-- Uses Prefix LM masking strategy 
+- Uses Prefix LM masking strategy
 - uses sentence-piece tokenization (uni-gram encoding)
+
+## Don't stop pretraining
+
+- the idea is why to pretrain on large dataset, then finetune for specific task
+- instead, they propose that we keep pretraining on large dataset, then on domain-specific unlabeled data, then pretrain on task-specific data, then finally finetune with labeled data
+
+### Steps:
+
+- first pretrain on the whole web
+- then pretrain on the target domain
+- then use k-means lgorithm to pick smaller refined dataset to your task
+- then pretrain on the smaller dataset
+- finally finetune using labeled data on the specific task
+
+## Cross-lingual Language Model Pretraining
+
+- we need to work on multiple languages
+
+### Shared sub-word vocabulary
+
+- Learn BPE splits on the concatenation of sentences sampled randomly from the monolingual corpora
+- Sentences are sampled according to a multinomial distribution
+- we don't need our sampling method to be biased towards any language
+
+### Causal Language Modeling
+
+- an autoregressive LM, that predicts the next token in the senctence
+- **Does this make sense given that our sentces is just a concatenation of sentences from different languages sampled randomly??**
+
+### Masked Language Modeling
+
+- just normal MLM, but they add vector to represent the language
+
+### Translation Language Modeling
+
+- we have parallel data, of sentces in two languages
+- we can use it to train a MLM to predict masked tokens from the two languages
+
+## XLM-RoBerta
+
+- they want to do multilingual Models
+- but they run into the `Curse of Multilingulity`, which states that for a fixed model capacity, more languages leads to better cross-lingual performance on low-resources languages up until a point, after which thd overall performance on monolingual and cross-lingual benchmarks degrades.
+- This is weird, becuase we wouldn't expect the low-resources languages performance to degrade with inceasing the number of languages
+
+### Positive Transfer vs. Capacity Dilution Tradeoff
+
+The transfer-interference trade-off: Low-resource languages benefit from scaling to more languages, until dilution (interference) kick in and degrades the overall performance.
+
+- this happens as a result of limited model capacity to take in all the languages
+
+## SpanBERT:
+
+- we want to mask more than one word, because some entities consist of many tokens, and it's better to mask them together
+- we can do that by adding another term to the MLM loss, which takes into consideration, when we startd masking, and when we end masking and the position of the current token in this masked span
+- they sample the length of the mask from a geometric distribution, because they want to give high probability for shorter masks
+- to remvoe the bias towards these mask tokens, we do like Albert, and leave chance to keep masked tokens unchanged, or change with random tokens
+- this masking gonna happen on the span level, which means if we decide to change masked tokens with random ones, we gonna do that for all tokens in the span.
+
+## BART
+
+- it combines that encoder and decoder parts of the Transformer
+- The key difference here, is that it applies arbitrary transformations to the orignal tokens
+- Examples of transformations:
+  - token masking
+  - sentence permutations
+  - document rotation
+  - token deletion
+  - text infilling (replacing arbitrary spans to text tokens with single mask token)
+- After that we try to generate the original document again using the autoregressive decoder
+
+## Longformer (Long Document Transformer)
+
+- combine a local windowed attention with a task motivated global attention
+
+### Sliding Window attention
+
+- used in pretraining
+- Sliding Window attention: only attend to tokens inside a window around you
+- Dilated Sliding Widnow: just like diluted conv, you attend to bigger window around you, but it is filled with holes, like you pay attention to every next two holes
+  - Ex: you at pos 0, and attend to : (-4,-2,0,2,4)
+- you can use different dilation configuration for each attention head
+
+### Global attention
+
+- used in downstream tasks
+- Task specific
+- Ex:
+  - for classification tasks, for `CLS`, attend to all tokens
+  - for QA, use global attention, for every token in the question
+
+## Sentence-BERT
+
+- suppose you want to get a similarity score between two sentences, the normal way is to append a FF layer on top of the CLS token on bert, that would map from the 768 dimension vector, to one number which is the similarity
+- if we have 10,000 sentences, then we need to do (N \* (n-1) / 2 ) inference computations to get the best similarity. This would take around 65 hours with BERT
+
+- Another approach is to input all sentences to BERT, and obtain the corresponding vectors for them, then apply cosine similarity on them. This would take roughly 5 seconds.
+- This second approach gives bad results, as BERT is optimized to get masked tokens,and it's not good at comparing sentences
+- It's ever worse than averaging Glove embeddings
+
+### Approach
+
+- you finetune bert on SNLI dataset (Natural Language Inference tasks)
+- then you take this model and finetune, or use it directly to calculate the cosine similarity
+
