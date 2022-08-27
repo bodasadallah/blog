@@ -919,27 +919,25 @@ The transfer-interference trade-off: Low-resource languages benefit from scaling
 - you finetune bert on SNLI dataset (Natural Language Inference tasks)
 - then you take this model and finetune, or use it directly to calculate the cosine similarity
 
+# Multi Modal
 
-## CTC Loss
-- when we have many-to-many sequence prediction
-- Labeling order matters , but there's no one-to-one correspondence between outputs and  labels 
-- we need to imnpose structural constarints on the output sequence 
-- Mostly used with speech recognition, where we have labels << input
-- they have a special blank token, and they reduce  all similar tokens in the same span between blanks with one token
+## Show and Tell
+- we want to generate image captions
+- they did that by using Googlenet as a feateure extractor
+- then followed that with LSTMs to generate captions 
 
-## Contrastive loss
-- In cross-entropy loss, all we care about is make similar images in the same side of the decision boundry
-- But in contrastive loss, we first try to move all similar examples near each other, so then we can train the calssification layer easily 
-- in case of self supervised learning, there can be a probelm of taking a postive example as a negative one, because we don't have labeled data, which can make it hard on downstream tasks 
-### How it works
-- we have the original image, and they call it the anchor
-- they augment this anchor image to obtain the positive examples
-- for each anchor, they generate one positive pair, and 2N-2  negative pairs
-- they calculate the dot product similarity between the anchor and these pairs
-- they take the log for the similarity of the anchor and the positive example in the numerator, and the summation of the similarity between the anchor and negative examples in the denomerator
-- so our objective is increasing the enumerator and decreacing the denomerator 
-- They also apply temperature smoothing 
-- This is can be also extended to supervised contrastive 
-  - we can have more than one positive label
-  - we can have multiple anchor classes 
-- we can see the anchor-positive similarity appears in the gradients, and this makes the gradient the biggest for hard-positives (positive examples that the model didn't learn the similarity between yet)
+## Deep Visual-Semantic Alignments for generating Image Descriptions 
+
+- we have a limitation of labeled images-captions pairs
+- we can utilize that the image would have long captions which describes multiple objects in the image
+- We try to detect those objects them align then with their corresponding captions 
+
+- we start by using R-CNN to get the boudning boxes for objects in the image
+- then we represent every objcet with a vector
+- we then ue RNN to get a vector representing every word 
+- we then caluclate teh similirity between each pair of all sentences in the dataset, and all the iamges 
+
+- then they used Markov Random Field to allign words to bounding boxes 
+- this depends that we got good representation for the iamges and captions from the training in the previous step
+
+- some of the captions would be incorrect, but overall we would have increased the size of our dataset 
