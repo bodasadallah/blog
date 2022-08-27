@@ -282,3 +282,65 @@ Optimizer Step: From the optimizer’s perspective, it is optimizing a local mod
 - it's like K-means except that we have probability that every sample belong to a distro, instead of 0-1 
 
 - we keep iterating till we reach the most accurate distros
+
+
+## CTC Loss
+- when we have many-to-many sequence prediction
+- Labeling order matters , but there's no one-to-one correspondence between outputs and  labels 
+- we need to imnpose structural constarints on the output sequence 
+- Mostly used with speech recognition, where we have labels << input
+- they have a special blank token, and they reduce  all similar tokens in the same span between blanks with one token
+
+## Contrastive loss
+- In cross-entropy loss, all we care about is make similar images in the same side of the decision boundry
+- But in contrastive loss, we first try to move all similar examples near each other, so then we can train the calssification layer easily 
+- in case of self supervised learning, there can be a probelm of taking a postive example as a negative one, because we don't have labeled data, which can make it hard on downstream tasks 
+### How it works
+- we have the original image, and they call it the anchor
+- they augment this anchor image to obtain the positive examples
+- for each anchor, they generate one positive pair, and 2N-2  negative pairs
+- they calculate the dot product similarity between the anchor and these pairs
+- they take the log for the similarity of the anchor and the positive example in the numerator, and the summation of the similarity between the anchor and negative examples in the denomerator
+- so our objective is increasing the enumerator and decreacing the denomerator 
+- They also apply temperature smoothing 
+- This is can be also extended to supervised contrastive 
+  - we can have more than one positive label
+  - we can have multiple anchor classes 
+- we can see the anchor-positive similarity appears in the gradients, and this makes the gradient the biggest for hard-positives (positive examples that the model didn't learn the similarity between yet)
+
+## MAP - Maximum a posteriori 
+
+- Tries to estimate the best parameters given the likilhood on the data, and the prior of the parameters 
+
+### Pros:
+- easy interpretable 
+- avoid overfitting (has regularization )
+- tends to look like MLE asymptotically 
+
+### Cons
+- point estimate, no representation of uncertainty in Theta
+- not invariant under reparameterization (meaning that if we mapped Theta using a function, then the new MAP value will not simply be the paramterized value on the old MAP value)
+- must assume prior on Theta 
+
+## Activation Checkpointing
+
+- normally we store the activations for all layers, because we need them in the backward path
+- for large models, this can cause huge memory footprint 
+- The idea is to only store the activation for the last layer in each block
+- and then recalculate the activations for the other layers when we need them 
+
+# Loss Scalling 
+
+- in half-precision training, some small values are rounded to zero, bacause of the representation limitation of  FP16
+
+- but we can just scale the loss, by multiplying it with certain value,and so the gradients would be scaled as well
+- this trick enables us to cover larger range of values 
+- for ex, if we scaled the loss by factor of 8, then extend the covered range with 3 exponents (2^3)
+
+
+## ZeRO
+
+- The main idea is in Data parallel, why copy state of optimizer and weights and gradients to all devices, while you can partition them
+- the idea is to partition all those over the devices, so that teh total memory would reduce dramatically     
+
+- This works because these states (optimizer, weights, gradietns) are temporal independent, meaning that we don't the whole matrix to calculate teh local step
