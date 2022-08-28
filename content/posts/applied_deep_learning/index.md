@@ -794,11 +794,13 @@ $ f({y_i}) = \max(0,y_i) + a_i \min(0, y_i) $
 
 ## Transformer-XL
 
+rop with it, so we stop the gradient for the extra context vectors
+
+- this means if our context size in
 - the idea is that we want to increase the context in the decoder to capture more data
 - for normal transformer, we only have fixed size context vector to caputre the previous data
 - but here, we take all the previous context with us in the forward pass,
-- but this can be huge to do back prop with it, so we stop the gradient for the extra context vectors
-- this means if our context size in 5 words, we will consider all previous context in the forward, but only calculate the gradient for jsut these last 5 words
+- but this can be huge to do back p5 words, we will consider all previous context in the forward, but only calculate the gradient for jsut these last 5 words
 
 - in order for this to work, they made relative position encoding
 
@@ -946,3 +948,27 @@ The transfer-interference trade-off: Low-resource languages benefit from scaling
 - instead, they just used MLP blocks
 - they achieved comparable results to Transfers, and even surpassed it in some classes
 - lastly, they used attention head on top of the MLP unit, and that boosted the performance to be better than Transfers
+
+# Multi Modal
+
+## Show and Tell
+
+- we want to generate image captions
+- they did that by using Googlenet as a feateure extractor
+- then followed that with LSTMs to generate captions
+
+## Deep Visual-Semantic Alignments for generating Image Descriptions
+
+- we have a limitation of labeled images-captions pairs
+- we can utilize that the image would have long captions which describes multiple objects in the image
+- We try to detect those objects them align then with their corresponding captions
+
+- we start by using R-CNN to get the boudning boxes for objects in the image
+- then we represent every objcet with a vector
+- we then ue RNN to get a vector representing every word
+- we then caluclate teh similirity between each pair of all sentences in the dataset, and all the iamges
+
+- then they used Markov Random Field to allign words to bounding boxes
+- this depends that we got good representation for the iamges and captions from the training in the previous step
+
+- some of the captions would be incorrect, but overall we would have increased the size of our dataset

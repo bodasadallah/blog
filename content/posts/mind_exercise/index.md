@@ -74,3 +74,9 @@ Prophet Mohammed(PBUH) said: The best deeds are those which are stable, even if 
 ## I will 
 
 * I will not envy ppl around me, I will not come with some excuses, they are many of them, it's easy to stay where you are envying ppl, coming with excusing while u sitting there don't nothing moving backward, if you aren't moving forward, then you are moving back, life isn't stationary 
+
+
+## Changing Perspective of looking at Tragic incidents 
+- You can turn pain and suffering into Achievement 
+- You can drive the opportunity to change from the feel of guilt 
+- You can drive the incentive to take action from death (It can remind you that you yourself will die someday, and that you should wake up, and take responsibility)
