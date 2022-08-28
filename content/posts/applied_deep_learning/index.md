@@ -918,3 +918,31 @@ The transfer-interference trade-off: Low-resource languages benefit from scaling
 
 - you finetune bert on SNLI dataset (Natural Language Inference tasks)
 - then you take this model and finetune, or use it directly to calculate the cosine similarity
+
+## GPT3
+
+- Just like gpt2, but with much more data
+- it gives good results for zero and one shot learning, and even better ones for few-shot learning
+- the problems with it, is it doesn't see the data, it's talking about, like you are talking the dog, but it doesn't know the visuals of dogs, that's why we go to multi-modal models
+
+## ELECTRA
+
+- The depend on Discriminator instead of generator
+- They still use a small MLM generator
+
+## SimCSE
+
+- mainly depends on Contrastive learning
+- here, they depend on the dropout in Bert to give the two related examples
+- so they just enter the same example twice for bert, and every time,it applies dropout and cancels some hidden units
+
+### Contrastive learning
+
+- the main idea is to make two represnetations for two close examples (sample, and its augmented version) as similar as possible, and in the same time make the representations as far for different examples
+
+## Pay Attention to MLPs
+
+- They main idea is that we don't need attention to get the high results
+- instead, they just used MLP blocks
+- they achieved comparable results to Transfers, and even surpassed it in some classes
+- lastly, they used attention head on top of the MLP unit, and that boosted the performance to be better than Transfers
