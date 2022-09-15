@@ -972,3 +972,52 @@ The transfer-interference trade-off: Low-resource languages benefit from scaling
 - this depends that we got good representation for the iamges and captions from the training in the previous step
 
 - some of the captions would be incorrect, but overall we would have increased the size of our dataset
+
+## Layer Normalization
+
+- it was motivated because batach nomalization doesn't work with RNN
+
+- it doesn't depend on batch size
+
+- it takes the mean and variance over the hiddedn units dimension
+
+- Now, every training examples, gonna have different normalizaiton terms
+
+## DALL-E
+
+- it's a 12-Billion parameter autoregressive transformer
+- trained on 250 Million image-text pair
+- the used discrete VAE, to tokenize the images
+
+## Perceiver
+
+- they are trying to unify the architecture for different data formats (text, image, voice)
+- the input and output depend on the task
+- but we can choose the size of the encoding
+
+# Generative Networks
+
+## VAE
+
+- The main goals is to learn the latent data distribution
+- It's like PCA but with nonlinearity
+- It's doens't have the same bases as PCA, but it spans the same spaces
+- can be used as noise reduction, if we add some noise to the input
+
+- the problem ends up as two parts
+  - a kl-divergance which tries to limit our learned distribution to be similar to our chosen tractable distribution
+  - and expectation of the log of the learned probability, which will basically act like a reconstruction error. and it will be a simple MSE loss in case of gaussian distribution
+    **The main point is, VAE, is like a normal autoencoder, but we added a regularization effect to it, which enforce the learned distribution, to stay similar to the chosen distribution (gaussian for example)**
+
+## Gumbel-softmax
+
+- it tries to make sampling from categorical distribution diffrentiable
+- it all sarted with the `reparameterization trick`, that allowes us to combine a deterministic part with a stochastic part, which will allow us to diffrentiate and use the back propagation
+- there was `gumbel-max` before, which used the argmax function. but this function is not diffrentiable
+- so they used softmax instead which is diffrentiable
+
+## GANs
+
+- the main idea is that we want to avoide the likelihood in VAE
+- so instead, we will utilize the ability of NN to do calssification
+- we will train a discriminator, and generator

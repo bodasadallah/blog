@@ -399,3 +399,30 @@ Optimizer Step: From the optimizer’s perspective, it is optimizing a local mod
 - they just provide the model with the chain of thought on how to generate the answer
 <center> <img src="chain-of-thought.png"/></center>
 
+## HuBert
+
+- the main idea is that they wanted to do MLM like bert, but that's challenging with audio.
+- so they first applied MFCCs to convert the audio signal into chunks
+- then they applied offline K-means algorithm to cluster each frame
+- so basically the labels comes from an unsupervised teacher which is the k-means
+- they applied the k-means on the MFCC
+- the main insight of why this works, is that the K-means algorithm is consistent, so the model learns more of the sequential structure of the data
+
+## Graphical models
+
+- to solve the marginal probability over the latent variable, we have two options:
+  - monte carlo inference
+    - this method is unbiased, but have high variance
+  - Variational inference
+    - this is very lowe variance, but is biased
+
+### Variation Inference
+
+- we can't calculate the original postrior
+- so we estimate it using another approximation, that is tractable, and we tweak it till it becomes like the original intractable distribution
+
+**if you maximize the lower bound of a function, you maximize that function**
+
+## VQ VAE
+
+- they applied sigmoid to the random variable to make it only takes confined range, istead of having values outside of pixels values range
