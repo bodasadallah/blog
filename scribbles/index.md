@@ -311,8 +311,8 @@ Optimizer Step: From the optimizer’s perspective, it is optimizing a local mod
 
 - when we have many-to-many sequence prediction
 - Labeling order matters , but there's no one-to-one correspondence between outputs and labels
-- we need to imnpose structural constarints on the output sequence
-- Mostly used with speech recognition, where we have labels << input
+- we need to impose structural constraints on the output sequence
+- Mostly used with speech recognition, where we have labels much less that input
 - they have a special blank token, and they reduce all similar tokens in the same span between blanks with one token
 
 ## Contrastive loss
@@ -412,4 +412,11 @@ Optimizer Step: From the optimizer’s perspective, it is optimizing a local mod
 ## VQ VAE
 
 - they applied sigmoid to the random variable to make it only takes confined range, istead of having values outside of pixels values range
+
+## Teacher forcing
+
+- it's a technique used to train randomness
+- it's applicable only in case we have output-to-hidden connections, and it can't be used in hidden-to-hidden connections
+- the main idea is that they use the true label from last step instead of the output. This way, we can parallelize the training
+- biggest disadvantage to this, is that it can't be used with `open loop`, meaning in case we enter the models's output as input. because this way, there will be some inputs as test time that the model didn't see at training.
 
