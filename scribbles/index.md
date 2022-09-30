@@ -413,10 +413,22 @@ Optimizer Step: From the optimizer’s perspective, it is optimizing a local mod
 
 - they applied sigmoid to the random variable to make it only takes confined range, istead of having values outside of pixels values range
 
-## Teacher forcing
+## Teacher forcing in RNN
 
 - it's a technique used to train randomness
 - it's applicable only in case we have output-to-hidden connections, and it can't be used in hidden-to-hidden connections
 - the main idea is that they use the true label from last step instead of the output. This way, we can parallelize the training
 - biggest disadvantage to this, is that it can't be used with `open loop`, meaning in case we enter the models's output as input. because this way, there will be some inputs as test time that the model didn't see at training.
+
+
+
+## Parti
+- it's  autoregressive Text-to-Image model
+- it uses transformer based image tokenizer
+- they can have detailed image description from  dataset designed for vision-impaired people
+
+
+### steps
+- first they train image tokenzier, which converts images to tokens 
+- then they train encoder-decoder model to do teacher-inforcing style training from the sentence tokens
 
