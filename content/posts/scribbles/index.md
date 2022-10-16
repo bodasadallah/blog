@@ -445,3 +445,15 @@ Optimizer Step: From the optimizer’s perspective, it is optimizing a local mod
 ### steps
 - first they train image tokenzier, which converts images to tokens 
 - then they train encoder-decoder model to do teacher-inforcing style training from the sentence tokens
+
+
+## Faster RCNN
+
+- it's fast because they merged the  the feature map for Region Proposal Network and the classifier network 
+
+- they pass on the extracted feature map with 3*3 sliding window 
+- for every anchor point he tries to generate 9 anchor boxes 
+
+### questions 
+- what if this anchor point doesn't have a ground truth? we only consider the first term of the loss, which is the objectivity. and we exclude the second term as we don't have ground truth for this pixel
+- why do we make intermediate anchor boxes? it's like adding a prior knowledge, we normalize our predictions and ground truth  according to these anchors 
