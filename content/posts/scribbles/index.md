@@ -471,3 +471,13 @@ Optimizer Step: From the optimizer’s perspective, it is optimizing a local mod
 - when you dataset has many instances of the same object (ex: same person, same car ). and your task is not detecting the object, but rather the action or the environment.
   - so if you didn't take all the pictures from the same object in one split of the data, there's a high chance your model would learn features related to the object and not the action
   - so we want to gather all dataset examples of the same object in the same split (train, or val)
+
+## Masked RCNN
+
+### why pyramid network
+- we want to have good semantic understanding but in high resolution 
+- it's so computationally expensive 
+- we use it as a backbone for FasterRCNN
+  - question? how do we use it as a backbone?
+
+- The main idea is that they seprated the mask predictor  from, classification and bounding box detection 
