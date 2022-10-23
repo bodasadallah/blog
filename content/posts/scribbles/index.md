@@ -434,14 +434,28 @@ Optimizer Step: From the optimizer’s perspective, it is optimizing a local mod
 - the main idea is that they use the true label from last step instead of the output. This way, we can parallelize the training
 - biggest disadvantage to this, is that it can't be used with `open loop`, meaning in case we enter the models's output as input. because this way, there will be some inputs as test time that the model didn't see at training.
 
-
-
 ## Parti
-- it's  autoregressive Text-to-Image model
-- it uses transformer based image tokenizer
-- they can have detailed image description from  dataset designed for vision-impaired people
 
+- it's autoregressive Text-to-Image model
+- it uses transformer based image tokenizer
+- they can have detailed image description from dataset designed for vision-impaired people
 
 ### steps
-- first they train image tokenzier, which converts images to tokens 
+
+- first they train image tokenzier, which converts images to tokens
 - then they train encoder-decoder model to do teacher-inforcing style training from the sentence tokens
+
+## How to choose validation sets
+
+> This is taken from Dr. Rachel's blog post [here](https://www.fast.ai/posts/2017-11-13-validation-sets.html)
+
+- the most common way is to choose a random subset from the training set.
+- but this doesn't always give the best results in real world
+
+### Cases when is a random subset not good enough?
+
+- Time series models
+  - it's better here to choose continuous intervals as val or test
+- when you dataset has many instances of the same object (ex: same person, same car ). and your task is not detecting the object, but rather the action or the environment.
+  - so if you didn't take all the pictures from the same object in one split of the data, there's a high chance your model would learn features related to the object and not the action
+  - so we want to gather all dataset examples of the same object in the same split (train, or val)
