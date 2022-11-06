@@ -81,3 +81,22 @@ Prophet Mohammed(PBUH) said: The best deeds are those which are stable, even if 
 ## Stuck in traffic
 
 Hello, this is 3rd of Oct 2022. I am on my way to work, and im supposed to be watching a YT vid learning Italian now. But we just had to change our daily route to work cause the streets are completely cut off. And right now we are going back all the way we came from, just to go to another open route. You may be wondering what happened? Did a huge accident occur? Are they fixing something in the street? What is all this fuss about? Actually, non of that happened, this all mess is just because an "important person" will cross this road, and so they would literally close this road, and all the roads leading to it. And let me tell you, this happens all the time, fortunately it doesn't occur regularly for me. But can you imagine how many ppl suffer cause of this. How many ppl are gonna be super late for their meetings, work, schedules. And im not talking about delay of few minutes, in most cases it's counted with the hours
+
+## Atomic Habits
+
+- we should shape our identity according to constant pillars( for example: Religion), and create goals that are in agreement with our identity, then maintain habits that help us reach our goals
+- we all have habits, we need to look for bad ones, and substitute them with good ones
+- we need to have a good system that promotes good habits and penalizes bad ones
+- we need to keep a constant tracking of our habits and our progress, to avoid the bad results of aut-pilotting
+- to build good habits, we need to make them easy,obvious,attractive, and satisfactory
+- Elite people, are the ones who show up, everytime, not only when they feel it.The overcome the boredom of the habits. They keep going when people give up
+- **Lastly, we just need to keep trying and iterating and enhancing using the feedback signals**
+
+### Habits Pros
+
+- it automates many tasks in our routine, allowing us to narrow our focus on little important stuff
+
+### Habits Cons
+
+- it becomes hard, to track your progress when you do thing on autopilot
+- you build up `pride` that blocks our ability to see our flaws
