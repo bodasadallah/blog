@@ -1,10 +1,10 @@
 ---
-title: ""
-subtitle: ""
-description: ""
-date: ""
-tags: []
-categories: []
+title: "A glimpse into PyTorch Autograd internals"
+subtitle: "Trying to understand some errors we get, while using pyTorch"
+description: "Trying to understand some errors we get, while using pyTorch"
+date: "2023-01-10"
+tags: [pytorch, python, autograd]
+categories: [pytorch, python, autograd]
 
 featuredImage: ""
 featuredImagePreview: ""
