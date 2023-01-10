@@ -12,7 +12,7 @@ featuredImagePreview: ""
 author: "Boda Sadallah"
 authorLink: "https://twitter.com/bodasadallah"
 
-draft: true
+draft: false
 ---
 
 # Intro
