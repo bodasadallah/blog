@@ -10,7 +10,7 @@ featuredImage: ""
 featuredImagePreview: "mit_ocw.png"
 
 author: "Boda Sadallah"
-authorLink: "@bodasdala"
+authorLink: "@bodasadallah"
 
 draft: false
 ---
