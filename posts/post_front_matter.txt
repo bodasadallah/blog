@@ -10,7 +10,7 @@ featuredImage: ""
 featuredImagePreview: ""
 
 author: "Boda Sadallah"
-authorLink: "https://twitter.com/bodasdala"
+authorLink: "https://twitter.com/bodasadallah"
 
 draft: false
 

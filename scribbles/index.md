@@ -461,9 +461,58 @@ Optimizer Step: From the optimizer’s perspective, it is optimizing a local mod
 ## Masked RCNN
 
 ### why pyramid network
-- we want to have good semantic understanding but in high resolution 
-- it's so computationally expensive 
+
+- we want to have good semantic understanding but in high resolution
+- it's so computationally expensive
 - we use it as a backbone for FasterRCNN
+
   - question? how do we use it as a backbone?
 
-- The main idea is that they seprated the mask predictor  from, classification and bounding box detection 
+- The main idea is that they seprated the mask predictor from, classification and bounding box detection
+
+## Test Time Augmentation (TTA)
+
+**During inference or validation, creating multiple versions of each image, using data augmentation, and then taking the average or maximum of the predictions for each augmented version of the image.**
+
+- It's a nice way to increase accuracy
+- Jermy Howard Said: "This is one of the most under-appreciated deep learning tricks, in my opinion!"
+
+## Linear Factor Models
+
+- they are one of the simplest classes of probabilistic models
+- they may not be used in SOA models, but they are a building block for many of them.
+- defined by the use of a stochastic linear decoder that generates x by adding noise to a linear transformation of h
+  - we take the hidden representation `h` and do linear transformation, then add noise to that, to get `x`
+
+## Autoencoders
+
+- We force the model to learn rich features by making the hidden features dimension to be less than the input's
+
+### Caveats and Dangers
+
+- Reconstruction loss is **indifferent** to latent space, meaning it just compares the input with the output.
+- Higher representational power gives flexibility for suboptimal encodings.
+
+* this means that good construction loss doesn't necessary mean that we learned good hidden features
+
+* we need more constraints to learn manifolds
+  - manifolds are areas that have high probability for the data to be in
+
+## DOM (Document Object Model)
+
+- it's how a browser renders the website
+- it's like a skeleton for the website
+- it's has documents with elements and attributes
+- it converts your HTML code to objects, and that's how you can interact with it with JS
+
+- So the DOM and the HTML are the same thing, with just two different representations
+
+## Interpreter Vs Compiler
+
+- compiler just takes your code, and statically compiles it, and hand you the binary for it and goes away
+- interpreter, stays with you and interprets your code line by line, and can make use of some speedups like JIT compilation
+
+## Category Theory
+
+- Category theory takes a bird's eye view of mathematics.From that high you can't see the details, but you however can see the patterns..
+
