@@ -15,7 +15,7 @@ authorLink: "https://twitter.com/bodasadallah"
 draft: false
 ---
 
-# Intro
+## Intro
 
 Here, we are going to discuss the internals of PyTorch `Autograd` module. The most of us don't have to know about this. I was the same till I came across this error:
 
@@ -85,7 +85,7 @@ with torch.no_grad():
     a += + 0.1 * a.grad
 ```
 
-# Normal training
+## Normal training
 
 Here's another script for a training a network with just one neuron. Our normal training system, would be something like this:
 
@@ -122,12 +122,12 @@ That's why we all wrap our weight updating steps under `torch.no_grad()` context
      - although, we zero our gradient before every backward pass, but this weight update step will add a new branch in the gradient calculations for the weights tensors,and this will mess with the calculations.
   2. we need to be able to do `in-place` operation, and so, our tensor will remain a `leaf`, and Autograd will keep populating its gradient.
 
-# Conclusion
+## Conclusion
 
 At last, we usually, use pre-built optimizers for the training step, or we even use a `trainer`, which make the things way easier.
 This was just a try to go back to the basics and trying to understand the roots of the problem.
 
-# References
+## References
 
 - https://PyTorch.org/docs/stable/generated/torch.Tensor.is_leaf.html#torch.Tensor.is_leaf
 - https://www.youtube.com/watch?v=MswxJw-8PvE
