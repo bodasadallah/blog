@@ -516,3 +516,32 @@ Optimizer Step: From the optimizer’s perspective, it is optimizing a local mod
 
 - Category theory takes a bird's eye view of mathematics.From that high you can't see the details, but you however can see the patterns..
 
+## Turing Lecture: Yoshua Bengio
+
+### Ref:
+
+- [YT Vid](https://www.youtube.com/watch?v=llGG62fNN64)
+
+* As we try to estimate functions that grow exponentially in complexity, we need to have training samples that grows with the same rate as well
+* but we can add the concept on composintialilty to mitigate this
+* we can do that by adding more layers, or adding more parameters per layer
+* local minimas are bad in low dimensions only, but in higher dimensions, they are more rare, and only happen near the global minima, cause they require the grad to be low in all dimensions.
+* on the other hand, high dimensions functions suffer from saddle points
+* we found that NN are good as classifiers, and that our data is concentrated in small regions called the `manifolds`. so we can use this to separate real data from fake one, and learn these manifolds as a side effect, and this is what GANs do
+
+## Some backward propagation insights:
+
+- sum in forward, propagates ones in backward
+- broadcasting in forward, propagates sum in backward ( for example: bias)
+- max,min,median operations in forward , becomes inserting ones in the positions of max,min,etc, and zeros in the other positions
+- view operation is just a reshape, and we can undo it in backward pass (just rearrange the gradient like the original tensor shape)
+- for embedding matrices, we need to see which entries did we use, and propagate the gradient for them, for each time we used them,(example: if we used the embedding for `a` twice and `c` once, then we need to propagate the gradient for `c` twice, and for `a` once)
+  - one way to do this, is to loop over the input and for each entry that we used the embedding for, accumulate the forwarded gradient vector
+
+## RUST and RAII (Resource Acquisition is Initialization)
+
+- the main idea is that when you create an object, you allocate some memory, and when you destroy that object, you destroy the memory
+- they do that, by ensuring that every chunk of memory the program allocates has only one owner, and this owner has the control over this memory chunk
+- in the code, if we assign this memory to another variable, then it becomes the new owner and the old one has no longer access to the data
+- there's also the option to borrow the data, instead of taking ownership over it
+
