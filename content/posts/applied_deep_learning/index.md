@@ -1021,3 +1021,49 @@ The transfer-interference trade-off: Low-resource languages benefit from scaling
 - the main idea is that we want to avoide the likelihood in VAE
 - so instead, we will utilize the ability of NN to do calssification
 - we will train a discriminator, and generator
+
+## CV Self-Supervised Learning
+
+### Deep Clustering
+
+- the idea is to do unsupervised learning using any CNN architecture, by first doing a forward pass and do clustering on the output, then take these psuedo-labeles and do traditional classification with them.
+
+### Constrastive Predictive Coding
+
+- the idea is to mask parts from the images and train the model to predict them
+- but we can't just use MSE loss, as the model won't learn any thing
+- instead, they discreteize the output, and used contrastive loss to make the model chose the correct label
+- the more negative examples we use, the higher the chance that there's gonna be a similar example, which is make it harder for the NN to find the answer
+- we can think of contrastive learining as clustering in the fact that every training point is a centroid of it's own cluster, and that perterbation to it should be near the cluster
+
+### Constrastive multiview coding
+
+- the idea here is to use different view of the same image, and treat them as the positive examples
+- they used the contrastive loss in the hidden dimension space (z space)
+- so, they enode the two images into the z space, then apply contrastive loss
+
+* minimizing the contrasitve loss is equal to maximizing the mutual information between the different views
+
+### Pretext-Invariant representataions
+
+- we want to learn a representation of images that is invariant to the type of the transformation done on the original image
+- we can do that be encouraging the representation of the different transformation to be similar
+- and the represntation of different images to be different
+- the logic behind it, is that the positive pairs are data, and any ohter pair is noise, and we try to increase the probability of data
+
+## Mel Spectrogram
+
+- we use it cause it reduce the dimention that we use to represent the data with
+- we use the filter banks to change the scale we represent the data with
+- we first chop the wav into chunks or windows, and then for each window, we apply STFT (short time fast fourier transform)
+- then we create the filter banks and then multiply the filter banks with the stft signal to create the mel spectrogram
+
+## Connectionist temporal classification
+
+- temporal classification: the task of labelling unsegmented data sequences
+- we have a problem of aligning the output to the labels, cause there might be some repeated outputs and some pauses that we want to get rid of
+
+### CTC Loss
+
+- we use it when we have a many to many projection between the input and the output and when there's no one to one correspondence between the outputs and the true labels
+- we use dynamic programming to get all possible outputs the would collapse to our label, and sum their probabilities to get the ctc loss
