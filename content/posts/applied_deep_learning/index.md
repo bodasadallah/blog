@@ -1067,3 +1067,8 @@ The transfer-interference trade-off: Low-resource languages benefit from scaling
 
 - we use it when we have a many to many projection between the input and the output and when there's no one to one correspondence between the outputs and the true labels
 - we use dynamic programming to get all possible outputs the would collapse to our label, and sum their probabilities to get the ctc loss
+
+### Transducer
+
+- ctc loss doesn't take into account the last outputs to genrate the next output, so it predicts each output indivedually
+- to solve this issue, we add something similar to a `language model` which takes the previous outputs into account
