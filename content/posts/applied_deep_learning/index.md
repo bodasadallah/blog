@@ -1072,3 +1072,9 @@ The transfer-interference trade-off: Low-resource languages benefit from scaling
 
 - ctc loss doesn't take into account the last outputs to genrate the next output, so it predicts each output indivedually
 - to solve this issue, we add something similar to a `language model` which takes the previous outputs into account
+# Reinforcement Learning 
+ 
+### Playing Atari with RL
+- We have and environment, and we can take actions that changes this environment, and we can take inputs from the environment in the form of observations, and our actions on the environment has rewards.
+- for atari, we can't get all the data frrom the raw pizels(for example, we can't get the direction of the ball from it), so we will take some of our previouse states and actions into account
+- also our actions affects all our future actions, so we will apply `future discoundted return` 
