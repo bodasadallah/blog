@@ -1,12 +1,203 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Boda Blog</title><link>https://bodasadalla98.github.io/blog/</link><description>This is my personal Blog, I write about random things that comes to my mind!</description><generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>bodasadallah@gmail.com (Boda Sadallah)</managingEditor><webMaster>bodasadallah@gmail.com (Boda Sadallah)</webMaster><lastBuildDate>Tue, 10 Jan 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://bodasadalla98.github.io/blog/index.xml" rel="self" type="application/rss+xml"/><item><title>A glimpse into PyTorch Autograd internals</title><link>https://bodasadalla98.github.io/blog/pytorch_internals/</link><pubDate>Tue, 10 Jan 2023 00:00:00 +0000</pubDate><author>Boda Sadallah</author><guid>https://bodasadalla98.github.io/blog/pytorch_internals/</guid><description><![CDATA[Intro Here, we are going to discuss the internals of PyTorch Autograd module. The most of us don&rsquo;t have to know about this. I was the same till I came across this error:
-1 unsupported operand type(s) for *: &#39;float&#39; and &#39;NoneType&#39; This came from executing the following code:
-1 2 3 4 5 6 import torch a = torch.tensor(5.0, requires_grad=True) * 0.1 b = torch.tensor(2.0, requires_grad=True) c = a + b c.]]></description></item><item><title>Univnet</title><link>https://bodasadalla98.github.io/blog/univnet/</link><pubDate>Mon, 07 Nov 2022 00:00:00 +0000</pubDate><author>Boda Sadallah</author><guid>https://bodasadalla98.github.io/blog/univnet/</guid><description>TTS (Text To Speech) TTS can be viewed as a sequence-to-sequence mapping problem; from a sequence of discrete symbols (text) to a real-valued time series (speech signals). A typical TTS pipeline has two parts; 1) text analysis and 2) speech synthesis. The text analysis part typically includes a number of natural language processing (NLP) steps, such as sentence segmentation, word segmentation, text normalization, part-of-speech (POS) tagging, and grapheme-to-phoneme (G2P) conversion. It takes a word sequence as input and outputs a phoneme sequence with a variety of linguistic contexts.</description></item><item><title>Distributed Training in PyTorch</title><link>https://bodasadalla98.github.io/blog/distributed_training/</link><pubDate>Thu, 11 Aug 2022 00:00:00 +0000</pubDate><author>Baraa, Boda</author><guid>https://bodasadalla98.github.io/blog/distributed_training/</guid><description>Distributed Training Why? Need more compute power to process large batches in parallel (DDP)
-Uses collective communication Large model that couldn’t be fit in memory of one GPU (RPC)
-Uses P2P communication All of the above XD
-DDP in Pytorch Every GPU has a model replica, controlled by a process. Every process fetches different batch of data. Forward. Overlapping between computation of and communication(broadcast - allreduced) of gradient. Validation 4 steps-recipe to Distributed Training Initialize Distributed Group 1 init_process_group(backend=&amp;#39;nccl&amp;#39;) Data Local Training 1 2 3 4 # Wrap train dataset into DataLoader train_loader = DataLoader(train_dataset, batch_size=batch_size) Distributed Training 1 2 3 4 5 6 7 8 9 10 # Create distributed sampler pinned to rank sampler = DistributedSampler(train_dataset, num_replicas=world_size, rank=rank, shuffle=True) # May be True # Wrap train dataset into DataLoader train_loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=False, # Must be False!</description></item><item><title>Programming Facts</title><link>https://bodasadalla98.github.io/blog/programming_facts/</link><pubDate>Mon, 23 May 2022 00:00:00 +0000</pubDate><author>Boda Sadallah</author><guid>https://bodasadalla98.github.io/blog/programming_facts/</guid><description><![CDATA[Intro this is intended to be some kind or reference to go through whenever I face some kind of bug, or error, that I don&rsquo;t know how to solve.usually these kinds of error that doesn&rsquo;t make sense, or we don&rsquo;t know the cause of them, and the worst it, that we don&rsquo;t find many ppl facing the same issue, so internet can&rsquo;t be so useful then. I learned theses facts the hard way, spending so much time trying to figure out the root of the issue.]]></description></item><item><title>Deep Learning Papers Summarization</title><link>https://bodasadalla98.github.io/blog/papers/</link><pubDate>Fri, 22 Apr 2022 00:00:00 +0000</pubDate><author>Boda Sadallah</author><guid>https://bodasadalla98.github.io/blog/papers/</guid><description>Decoupled Neural Interfaces using Synthetic Gradients In NN, the training process, has 3 bottle-necks forward lock: you need to calculate teh output of the previous layer before you can can go into next layer in forward pass backward pass: the same, but for backward propagation weights lock: you can&amp;rsquo;t update weights unless you do for weights in next layer the paper trying to unlock these bootle-necks by decoupling each layer, to be sufficient alone it does that by introducing, a Synthetic Gradient Model, that can predict the gradient for the current layer, without waiting for the gradient of the next layer this was we can calculate gradient and update weights as soon as we calculate the activation of the current layer Synthetic Gradient Model can be just a simple NN that is trained to output the gradient of the layer</description></item><item><title>GIT</title><link>https://bodasadalla98.github.io/blog/git/</link><pubDate>Tue, 15 Mar 2022 00:00:00 +0000</pubDate><author>Boda Sadallah</author><guid>https://bodasadalla98.github.io/blog/git/</guid><description>Beatiful commands git log --oneline --decorate --all --graph
-git merge --abort ==&amp;gt; abort merge, and get back like it never happened
-git reset --hard ==&amp;gt; is your way to lose all uncommited work in your working directory
-git fast forward is basically that git moves the commit pointer upward to the new posotion, without creating a merge commit or anything you can merge with --no-ff flag, to disable the fast forward merge and force git to create the merge commit Git Bisect used when something broke, and you know what did broke, but you can&amp;rsquo;t figure out when did it broke you just give it a testing criteria to test the commit history against Methodology everything inside git is an object all your local branches are located in .</description></item><item><title>Stanford CS224N NLP with Deep Learning</title><link>https://bodasadalla98.github.io/blog/stanford_nlp_cs224n/</link><pubDate>Tue, 08 Mar 2022 00:00:00 +0000</pubDate><author>Boda Sadallah</author><guid>https://bodasadalla98.github.io/blog/stanford_nlp_cs224n/</guid><description>Post for Stanford NLP Course</description></item><item><title>Applied Deep Learning</title><link>https://bodasadalla98.github.io/blog/applied_deep_learning/</link><pubDate>Tue, 01 Feb 2022 00:00:00 +0000</pubDate><author>Boda Sadallah</author><guid>https://bodasadalla98.github.io/blog/applied_deep_learning/</guid><description>Reference Course Repo with the slides, and course info Deep Learning overview we can look at deep learning as an algorithm that writes algorithms, like a compiler in this case the source code would be the data: (examples/experiences) excutable code would be the deployable model Deep: Functions compositions $ fl f{l-1} &amp;hellip;. f_1$
-Learning: Loss, Back-propagation, and Gradient Descent
-$ L(\theta) \approx J(\theta)$ &amp;ndash;&amp;gt; noisy estimate of the objective function due to mini-batching.</description></item><item><title>NLP Specialization</title><link>https://bodasadalla98.github.io/blog/coursera_nlp_specialization/</link><pubDate>Sun, 30 Jan 2022 00:00:00 +0000</pubDate><author>Boda Sadallah</author><guid>https://bodasadalla98.github.io/blog/coursera_nlp_specialization/</guid><description>Course 1: Classification and vector Spaces Weak 4 Hashing We can use hashing to search for the K-nearest vectors, to heavily reduce the searching space Locality senstive hashing the idea is to put items that are close in the vector space, in the same hashing buckets
-we can create a set of planes and calculate the relative position of points compated to this plane and then we can calculate the hash value for this point accordingly</description></item><item><title>CS480/680 Intro to Machine Learning</title><link>https://bodasadalla98.github.io/blog/introduction_to_machine_learning/</link><pubDate>Tue, 14 Dec 2021 00:00:00 +0000</pubDate><author>Boda Sadallah</author><guid>https://bodasadalla98.github.io/blog/introduction_to_machine_learning/</guid><description>Lecture 12 Gausain process infinite dimentional gaussian distribution Lecture 16 Convolution NN a rule of thumb: to have many layers with smaller filters is better than having one big filter, as going deep captures better features and also uses fewer parameters Residual Networks even after using Relu, NN can still suffer from gradient vanishing the idea in to add skip connections so that we can create shorter paths Lecture 18 LSTM vs GRU vs Attention LSTM: 3 gates, one for the cell state, one for the input, one for the output GRU: only two states, one for output, and one for taking weighted probablitiy for the contribution of the input and the hidden state takes less parameters Attention: at every step of producing the output, create a new context vector that gives more attention to the importat input tokens for this output token Lecture 20 Autoencoder takes different input and generates the same output</description></item></channel></rss>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Boda Blog</title><link>https://bodasadalla98.github.io/blog/</link><description>This is my personal Blog, I write about random things that comes to my mind!</description><generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>bodasadallah@gmail.com (Boda Sadallah)</managingEditor><webMaster>bodasadallah@gmail.com (Boda Sadallah)</webMaster><lastBuildDate>Sat, 05 Oct 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://bodasadalla98.github.io/blog/index.xml" rel="self" type="application/rss+xml"/><item><title>Can we save peer-review quality?</title><link>https://bodasadalla98.github.io/blog/peer_review/</link><pubDate>Sat, 05 Oct 2024 00:00:00 +0000</pubDate><author>Boda Sadallah</author><guid>https://bodasadalla98.github.io/blog/peer_review/</guid><description><![CDATA[<h1 id="what-is-peer-review">What is Peer-review</h1>
+<p>Peer-review is a corner-stone in scientific research. It serves a quality check for scientific drafts. It is formally defined as: <code>Peer review is the evaluation of work by one or more people with similar competencies as the producers of the work.</code></p>
+<h1 id="why-is-it-important">Why is it important</h1>
+<p>It&rsquo;s important as, only after an article passes peer review can it be officially published, and it&rsquo;s the knowledge shared with the scientific community and the world.</p>]]></description></item><item><title>You and your Research</title><link>https://bodasadalla98.github.io/blog/reading_summary/</link><pubDate>Fri, 05 May 2023 00:00:00 +0000</pubDate><author>Boda Sadallah</author><guid>https://bodasadalla98.github.io/blog/reading_summary/</guid><description><![CDATA[<h1 id="you-and-your-research">You and your Research</h1>
+<blockquote>
+<p><a href="https://www.cs.virginia.edu/~robins/YouAndYourResearch.html" target="_blank" rel="noopener noreffer ">https://www.cs.virginia.edu/~robins/YouAndYourResearch.html</a></p>
+</blockquote>
+<h2 id="main-ideas">Main Ideas</h2>
+<ul>
+<li>Commit to your idea</li>
+<li>Ask yourself: What are the important problems in my field?</li>
+<li>Communicate with the bright minds</li>
+<li>Ask the important questions</li>
+<li>Closed door, or open door
+<ul>
+<li>when you work with door closed
+<ul>
+<li>you work harder</li>
+<li>you work on the wrong thing</li>
+</ul>
+</li>
+<li>open door working
+<ul>
+<li>get many interruptions</li>
+<li>get important clues</li>
+</ul>
+</li>
+<li>My take on this is we should keep an open mind about what other people are doing and where the research is heading</li>
+</ul>
+</li>
+</ul>]]></description></item><item><title>A glimpse into PyTorch Autograd internals</title><link>https://bodasadalla98.github.io/blog/pytorch_internals/</link><pubDate>Tue, 10 Jan 2023 00:00:00 +0000</pubDate><author>Boda Sadallah</author><guid>https://bodasadalla98.github.io/blog/pytorch_internals/</guid><description><![CDATA[<h2 id="intro">Intro</h2>
+<p>Here, we are going to discuss the internals of PyTorch <code>Autograd</code> module. The most of us don&rsquo;t have to know about this. I was the same till I came across this error:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">unsupported operand type(s) for *: &#39;float&#39; and &#39;NoneType&#39;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>This came from executing the following code:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">torch</span>
+</span></span><span class="line"><span class="cl"><span class="n">a</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">(</span><span class="mf">5.0</span><span class="p">,</span> <span class="n">requires_grad</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="o">*</span> <span class="mf">0.1</span>
+</span></span><span class="line"><span class="cl"><span class="n">b</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">(</span><span class="mf">2.0</span><span class="p">,</span> <span class="n">requires_grad</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">c</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+</span></span><span class="line"><span class="cl"><span class="n">c</span><span class="o">.</span><span class="n">backward</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="n">a</span> <span class="o">+=</span> <span class="o">+</span> <span class="mf">0.1</span> <span class="o">*</span> <span class="n">a</span><span class="o">.</span><span class="n">grad</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>But why? We defined that the gradient of <code>a</code> should be calculated by putting <code>requires_grad</code> to be <code>True</code>!</p>]]></description></item><item><title>Univnet</title><link>https://bodasadalla98.github.io/blog/univnet/</link><pubDate>Mon, 07 Nov 2022 00:00:00 +0000</pubDate><author>Boda Sadallah</author><guid>https://bodasadalla98.github.io/blog/univnet/</guid><description>&lt;h1 id="tts-text-to-speech">TTS (Text To Speech)&lt;/h1>
+&lt;p>TTS can be viewed as a sequence-to-sequence mapping problem; from a sequence of discrete symbols
+(text) to a real-valued time series (speech signals). A typical TTS pipeline has two parts; 1)
+text analysis and 2) speech synthesis. The text analysis part typically includes a number of natural
+language processing (NLP) steps, such as sentence segmentation, word segmentation, text normalization,
+part-of-speech (POS) tagging, and grapheme-to-phoneme (G2P) conversion. It takes a word
+sequence as input and outputs a phoneme sequence with a variety of linguistic contexts. The speech
+synthesis part takes the context-dependent phoneme sequence as its input and outputs a synthesized
+speech waveform.&lt;/p></description></item><item><title>Distributed Training in PyTorch</title><link>https://bodasadalla98.github.io/blog/distributed_training/</link><pubDate>Thu, 11 Aug 2022 00:00:00 +0000</pubDate><author>Baraa, Boda</author><guid>https://bodasadalla98.github.io/blog/distributed_training/</guid><description><![CDATA[<h1 id="distributed-training">Distributed Training</h1>
+<h2 id="why">Why?</h2>
+<ul>
+<li>
+<p>Need more compute power to process large batches in parallel (DDP)</p>
+<ul>
+<li>Uses collective communication</li>
+</ul>
+</li>
+<li>
+<p>Large model that couldn’t be fit in memory of one GPU (RPC)</p>
+<ul>
+<li>Uses P2P communication</li>
+</ul>
+</li>
+<li>
+<p>All of the above XD</p>
+</li>
+</ul>
+<h2 id="ddp-in-pytorch">DDP in Pytorch</h2>
+<ul>
+<li>Every GPU has a model replica, controlled by a process.</li>
+<li>Every process fetches different batch of data.</li>
+<li>Forward.</li>
+<li>Overlapping between computation of  and communication(broadcast - allreduced) of gradient.</li>
+<li>Validation</li>
+</ul>
+<p align="center"> </p>]]></description></item><item><title>Programming Facts</title><link>https://bodasadalla98.github.io/blog/programming_facts/</link><pubDate>Mon, 23 May 2022 00:00:00 +0000</pubDate><author>Boda Sadallah</author><guid>https://bodasadalla98.github.io/blog/programming_facts/</guid><description><![CDATA[<h1 id="intro">Intro</h1>
+<ul>
+<li>this is intended to be some kind or reference to go through whenever I face some kind of bug, or error, that I don&rsquo;t know how to solve.usually these kinds of error that doesn&rsquo;t make sense, or we don&rsquo;t know the cause of them, and the worst it, that we don&rsquo;t find many ppl facing the same issue, so internet can&rsquo;t be so useful then.</li>
+<li>I learned theses facts the hard way, spending so much time trying to figure out the root of the issue.</li>
+</ul>
+<h1 id="debugging-facts">Debugging Facts</h1>
+<ul>
+<li>here are some tips, to help whenever you are facing some error, trying get a package to work, or you these kinds of error that takes you life few days, you know.</li>
+</ul>
+<h2 id="package-installation-issues">Package installation issues</h2>
+<h3 id="python-version">Python version</h3>
+<ul>
+<li>this might sound trivial, but every package version, only works with some python versions</li>
+<li>so you should run <code>pip install package-name==</code> to get the package versions supported by your python version</li>
+</ul>
+<h3 id="update-pip">Update Pip</h3>
+<ul>
+<li>whenever there&rsquo;s a dependency conflict, or versions conflict, and you can&rsquo;t install a package, then check your pip and update it if possible</li>
+<li>I spent like 4 days clueless why a simple package that I installed a week before, won&rsquo;t install now, like out of a sudden, it won&rsquo;t install anymore, due to dependency packages conflict</li>
+<li>when I upgraded pip, it simply worked</li>
+</ul>
+<h3 id="check-for-broken-installations">Check for broken installations</h3>
+<ul>
+<li>many times we would try to install some something, then for whatever reason, it wouldn&rsquo;t complete successful. But then we would try to install again, and we would encounter strange errors, that we don&rsquo;t know the root for them.</li>
+<li>there error could be because there&rsquo;s a broken installation, that messed things up.</li>
+<li>so, when we delete, or remove this broken installation, and install again, it just works.</li>
+</ul>]]></description></item><item><title>Deep Learning Papers Summarization</title><link>https://bodasadalla98.github.io/blog/papers/</link><pubDate>Fri, 22 Apr 2022 00:00:00 +0000</pubDate><author>Boda Sadallah</author><guid>https://bodasadalla98.github.io/blog/papers/</guid><description><![CDATA[<h2 id="decoupled-neural-interfaces-using-synthetic-gradients">Decoupled Neural Interfaces using Synthetic Gradients</h2>
+<ul>
+<li>In NN, the training process, has 3 bottle-necks
+<ul>
+<li>forward lock: you need to calculate teh output of the previous layer before you can can go into next layer in forward pass</li>
+<li>backward pass: the same, but for backward propagation</li>
+<li>weights lock: you can&rsquo;t update weights unless you do for weights in next layer</li>
+</ul>
+</li>
+<li>the paper trying to unlock these bootle-necks by decoupling each layer, to be sufficient alone</li>
+<li>it does that by introducing, a Synthetic Gradient Model, that can predict the gradient for the current layer, without waiting for the gradient of the next layer</li>
+<li>this was we can calculate gradient and update weights as soon as we calculate the activation of the current layer</li>
+</ul>
+<h3 id="synthetic-gradient-model">Synthetic Gradient Model</h3>
+<ul>
+<li>
+<p>can be just a simple NN that is trained to output the gradient of the layer</p>]]></description></item><item><title>GIT</title><link>https://bodasadalla98.github.io/blog/git/</link><pubDate>Tue, 15 Mar 2022 00:00:00 +0000</pubDate><author>Boda Sadallah</author><guid>https://bodasadalla98.github.io/blog/git/</guid><description><![CDATA[<h2 id="beatiful-commands">Beatiful commands</h2>
+<p><code>git log --oneline --decorate --all --graph</code></p>
+<p><code>git merge --abort</code> ==&gt; abort merge, and get back like it never happened</p>
+<p><code>git reset --hard </code> ==&gt; is your way to lose all uncommited work in your working directory</p>
+<ul>
+<li>git fast forward is basically that git moves the commit pointer upward to the new posotion, without creating a merge commit or anything</li>
+<li>you can merge with <code> --no-ff</code> flag, to disable the fast forward merge and force git to create the merge commit</li>
+</ul>
+<h3 id="git-bisect">Git Bisect</h3>
+<ul>
+<li>used when something broke, and you know what did broke, but you can&rsquo;t figure out when did it broke</li>
+<li>you just give it a testing criteria to test the commit history against</li>
+</ul>
+<h2 id="methodology">Methodology</h2>
+<ul>
+<li>everything inside git is an object</li>
+<li>all your local branches are located in .git/refs/heads</li>
+<li>a branch is basically a file that appoints to a commit. a branch is bisacally a pointer to specific commit</li>
+<li>every commit has a parent, so to assemble branches we follow and compute their parents</li>
+</ul>
+<h2 id="commits">Commits</h2>
+<ul>
+<li>keep added changes in commits related to the same topic</li>
+<li>add informative commit message</li>
+<li>you can add parts of changes in a single file using <code>-p</code> flag in <code>git add -p filename</code>0</li>
+</ul>
+<h2 id="branching">Branching</h2>
+<h3 id="long-running-branches">Long-running branches</h3>
+<ul>
+<li>Main branch</li>
+<li>Dev branch</li>
+</ul>
+<h3 id="short-lived-branches">Short-lived branches</h3>
+<ul>
+<li>features branches</li>
+<li>bug fixes branches</li>
+</ul>
+<h2 id="merging">Merging</h2>
+<ul>
+<li>When the one of the two branches has the head is the same as the common ancesstor of the two branches, then we can do a fast-forward merge by putting the commits of the another branch on top the common ancesstor commit</li>
+</ul>
+<h2 id="rebase">Rebase</h2>
+<ul>
+<li>rebase puts the commits of the second brach on top of the common ancesstor commit then rebase the commits of the first branch on top of the last commit of the first branch, then it changes the history of commits</li>
+</ul>
+<p><strong>Only use rebase to clean local commit history, don&rsquo;t use rebase on commits that is pushed to online</strong></p>]]></description></item><item><title>Stanford CS224N NLP with Deep Learning</title><link>https://bodasadalla98.github.io/blog/stanford_nlp_cs224n/</link><pubDate>Tue, 08 Mar 2022 00:00:00 +0000</pubDate><author>Boda Sadallah</author><guid>https://bodasadalla98.github.io/blog/stanford_nlp_cs224n/</guid><description>Post for Stanford NLP Course</description></item><item><title>Applied Deep Learning</title><link>https://bodasadalla98.github.io/blog/applied_deep_learning/</link><pubDate>Tue, 01 Feb 2022 00:00:00 +0000</pubDate><author>Boda Sadallah</author><guid>https://bodasadalla98.github.io/blog/applied_deep_learning/</guid><description><![CDATA[<h2 id="reference">Reference</h2>
+<ul>
+<li><a href="https://github.com/maziarraissi/Applied-Deep-Learning" target="_blank" rel="noopener noreffer ">Course</a></li>
+<li><a href="https://github.com/maziarraissi/Applied-Deep-Learning" target="_blank" rel="noopener noreffer ">Repo with the slides, and course info</a></li>
+</ul>
+<h2 id="deep-learning-overview">Deep Learning overview</h2>
+<ul>
+<li>we can look at deep learning as an algorithm that writes algorithms, like a compiler</li>
+</ul>
+<ul>
+<li>in this case the source code would be the data: (examples/experiences)</li>
+<li>excutable code would be the deployable model</li>
+</ul>
+<ul>
+<li>
+<p>Deep: Functions compositions $ f<em>l f</em>{l-1} &hellip;. f_1$</p>
+</li>
+<li>
+<p>Learning: Loss, Back-propagation, and Gradient Descent</p>
+</li>
+<li>
+<p>$ L(\theta) \approx J(\theta)$ &ndash;&gt; noisy estimate of the objective function due to mini-batching. That&rsquo;s why we call it stochastic Gradient Descent</p>]]></description></item></channel></rss>

@@ -1,3 +1,30 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>autograd - Category - Boda Blog</title><link>https://bodasadalla98.github.io/blog/categories/autograd/</link><description>autograd - Category - Boda Blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>bodasadallah@gmail.com (Boda Sadallah)</managingEditor><webMaster>bodasadallah@gmail.com (Boda Sadallah)</webMaster><lastBuildDate>Tue, 10 Jan 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://bodasadalla98.github.io/blog/categories/autograd/" rel="self" type="application/rss+xml"/><item><title>A glimpse into PyTorch Autograd internals</title><link>https://bodasadalla98.github.io/blog/pytorch_internals/</link><pubDate>Tue, 10 Jan 2023 00:00:00 +0000</pubDate><author>Boda Sadallah</author><guid>https://bodasadalla98.github.io/blog/pytorch_internals/</guid><description><![CDATA[Intro Here, we are going to discuss the internals of PyTorch Autograd module. The most of us don&rsquo;t have to know about this. I was the same till I came across this error:
-1 unsupported operand type(s) for *: &#39;float&#39; and &#39;NoneType&#39; This came from executing the following code:
-1 2 3 4 5 6 import torch a = torch.tensor(5.0, requires_grad=True) * 0.1 b = torch.tensor(2.0, requires_grad=True) c = a + b c.]]></description></item></channel></rss>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Autograd - Category - Boda Blog</title><link>https://bodasadalla98.github.io/blog/categories/autograd/</link><description>Autograd - Category - Boda Blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>bodasadallah@gmail.com (Boda Sadallah)</managingEditor><webMaster>bodasadallah@gmail.com (Boda Sadallah)</webMaster><lastBuildDate>Tue, 10 Jan 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://bodasadalla98.github.io/blog/categories/autograd/" rel="self" type="application/rss+xml"/><item><title>A glimpse into PyTorch Autograd internals</title><link>https://bodasadalla98.github.io/blog/pytorch_internals/</link><pubDate>Tue, 10 Jan 2023 00:00:00 +0000</pubDate><author>Boda Sadallah</author><guid>https://bodasadalla98.github.io/blog/pytorch_internals/</guid><description><![CDATA[<h2 id="intro">Intro</h2>
+<p>Here, we are going to discuss the internals of PyTorch <code>Autograd</code> module. The most of us don&rsquo;t have to know about this. I was the same till I came across this error:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">unsupported operand type(s) for *: &#39;float&#39; and &#39;NoneType&#39;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>This came from executing the following code:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">torch</span>
+</span></span><span class="line"><span class="cl"><span class="n">a</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">(</span><span class="mf">5.0</span><span class="p">,</span> <span class="n">requires_grad</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="o">*</span> <span class="mf">0.1</span>
+</span></span><span class="line"><span class="cl"><span class="n">b</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">(</span><span class="mf">2.0</span><span class="p">,</span> <span class="n">requires_grad</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">c</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+</span></span><span class="line"><span class="cl"><span class="n">c</span><span class="o">.</span><span class="n">backward</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="n">a</span> <span class="o">+=</span> <span class="o">+</span> <span class="mf">0.1</span> <span class="o">*</span> <span class="n">a</span><span class="o">.</span><span class="n">grad</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>But why? We defined that the gradient of <code>a</code> should be calculated by putting <code>requires_grad</code> to be <code>True</code>!</p>]]></description></item></channel></rss>

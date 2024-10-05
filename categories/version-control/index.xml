@@ -1,4 +1,46 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>version-control - Category - Boda Blog</title><link>https://bodasadalla98.github.io/blog/categories/version-control/</link><description>version-control - Category - Boda Blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>bodasadallah@gmail.com (Boda Sadallah)</managingEditor><webMaster>bodasadallah@gmail.com (Boda Sadallah)</webMaster><lastBuildDate>Tue, 15 Mar 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://bodasadalla98.github.io/blog/categories/version-control/" rel="self" type="application/rss+xml"/><item><title>GIT</title><link>https://bodasadalla98.github.io/blog/git/</link><pubDate>Tue, 15 Mar 2022 00:00:00 +0000</pubDate><author>Boda Sadallah</author><guid>https://bodasadalla98.github.io/blog/git/</guid><description>Beatiful commands git log --oneline --decorate --all --graph
-git merge --abort ==&amp;gt; abort merge, and get back like it never happened
-git reset --hard ==&amp;gt; is your way to lose all uncommited work in your working directory
-git fast forward is basically that git moves the commit pointer upward to the new posotion, without creating a merge commit or anything you can merge with --no-ff flag, to disable the fast forward merge and force git to create the merge commit Git Bisect used when something broke, and you know what did broke, but you can&amp;rsquo;t figure out when did it broke you just give it a testing criteria to test the commit history against Methodology everything inside git is an object all your local branches are located in .</description></item></channel></rss>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Version-Control - Category - Boda Blog</title><link>https://bodasadalla98.github.io/blog/categories/version-control/</link><description>Version-Control - Category - Boda Blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>bodasadallah@gmail.com (Boda Sadallah)</managingEditor><webMaster>bodasadallah@gmail.com (Boda Sadallah)</webMaster><lastBuildDate>Tue, 15 Mar 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://bodasadalla98.github.io/blog/categories/version-control/" rel="self" type="application/rss+xml"/><item><title>GIT</title><link>https://bodasadalla98.github.io/blog/git/</link><pubDate>Tue, 15 Mar 2022 00:00:00 +0000</pubDate><author>Boda Sadallah</author><guid>https://bodasadalla98.github.io/blog/git/</guid><description><![CDATA[<h2 id="beatiful-commands">Beatiful commands</h2>
+<p><code>git log --oneline --decorate --all --graph</code></p>
+<p><code>git merge --abort</code> ==&gt; abort merge, and get back like it never happened</p>
+<p><code>git reset --hard </code> ==&gt; is your way to lose all uncommited work in your working directory</p>
+<ul>
+<li>git fast forward is basically that git moves the commit pointer upward to the new posotion, without creating a merge commit or anything</li>
+<li>you can merge with <code> --no-ff</code> flag, to disable the fast forward merge and force git to create the merge commit</li>
+</ul>
+<h3 id="git-bisect">Git Bisect</h3>
+<ul>
+<li>used when something broke, and you know what did broke, but you can&rsquo;t figure out when did it broke</li>
+<li>you just give it a testing criteria to test the commit history against</li>
+</ul>
+<h2 id="methodology">Methodology</h2>
+<ul>
+<li>everything inside git is an object</li>
+<li>all your local branches are located in .git/refs/heads</li>
+<li>a branch is basically a file that appoints to a commit. a branch is bisacally a pointer to specific commit</li>
+<li>every commit has a parent, so to assemble branches we follow and compute their parents</li>
+</ul>
+<h2 id="commits">Commits</h2>
+<ul>
+<li>keep added changes in commits related to the same topic</li>
+<li>add informative commit message</li>
+<li>you can add parts of changes in a single file using <code>-p</code> flag in <code>git add -p filename</code>0</li>
+</ul>
+<h2 id="branching">Branching</h2>
+<h3 id="long-running-branches">Long-running branches</h3>
+<ul>
+<li>Main branch</li>
+<li>Dev branch</li>
+</ul>
+<h3 id="short-lived-branches">Short-lived branches</h3>
+<ul>
+<li>features branches</li>
+<li>bug fixes branches</li>
+</ul>
+<h2 id="merging">Merging</h2>
+<ul>
+<li>When the one of the two branches has the head is the same as the common ancesstor of the two branches, then we can do a fast-forward merge by putting the commits of the another branch on top the common ancesstor commit</li>
+</ul>
+<h2 id="rebase">Rebase</h2>
+<ul>
+<li>rebase puts the commits of the second brach on top of the common ancesstor commit then rebase the commits of the first branch on top of the last commit of the first branch, then it changes the history of commits</li>
+</ul>
+<p><strong>Only use rebase to clean local commit history, don&rsquo;t use rebase on commits that is pushed to online</strong></p>]]></description></item></channel></rss>

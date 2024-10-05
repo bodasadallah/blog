@@ -1,6 +1,16 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Linear Algebra - Category - Boda Blog</title><link>https://bodasadalla98.github.io/blog/categories/linear-algebra/</link><description>Linear Algebra - Category - Boda Blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>bodasadallah@gmail.com (Boda Sadallah)</managingEditor><webMaster>bodasadallah@gmail.com (Boda Sadallah)</webMaster><lastBuildDate>Sat, 02 Oct 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://bodasadalla98.github.io/blog/categories/linear-algebra/" rel="self" type="application/rss+xml"/><item><title>MIT 18.06 Linear Algebra course</title><link>https://bodasadalla98.github.io/blog/1806_mit/</link><pubDate>Sat, 02 Oct 2021 00:00:00 +0000</pubDate><author>Boda Sadallah</author><guid>https://bodasadalla98.github.io/blog/1806_mit/</guid><description><![CDATA[Lecture 1 We learn about the big picture behind multiplication of matrix and vector
-we learn about the row picture and column picture
-Lecture 2 we learned about elimination method to solve a system of equations
-Lecture 3 in this lecture we learned about matrices multiplication:
-we can do that in five ways:
-row * col ==&gt; gives an entry (1 cell) col _ row ==&gt; sum ( r1 _ c1 , r2 * c2, etc) by columns ==&gt; A * c1 = combination of A columns by columns ==&gt; r1 * B = combination of A B rows by blocks ==&gt; A (A1,A2,A3,A4) _ B (B1,B2,B3,B4) = C1 = (A1_ B1 + A2 * B3) and so on then we learned about gausian-Jordan elimination to find the matrix inverse]]></description></item></channel></rss>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Linear Algebra - Category - Boda Blog</title><link>https://bodasadalla98.github.io/blog/categories/linear-algebra/</link><description>Linear Algebra - Category - Boda Blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>bodasadallah@gmail.com (Boda Sadallah)</managingEditor><webMaster>bodasadallah@gmail.com (Boda Sadallah)</webMaster><lastBuildDate>Sat, 02 Oct 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://bodasadalla98.github.io/blog/categories/linear-algebra/" rel="self" type="application/rss+xml"/><item><title>MIT 18.06 Linear Algebra course</title><link>https://bodasadalla98.github.io/blog/1806_mit/</link><pubDate>Sat, 02 Oct 2021 00:00:00 +0000</pubDate><author>Boda Sadallah</author><guid>https://bodasadalla98.github.io/blog/1806_mit/</guid><description><![CDATA[<h2 id="lecture-1">Lecture 1</h2>
+<p>We learn about the big picture behind multiplication of matrix and vector</p>
+<p>we learn about the row picture and column picture</p>
+<h2 id="lecture-2">Lecture 2</h2>
+<p>we learned about elimination method to solve a system of equations</p>
+<h2 id="lecture-3">Lecture 3</h2>
+<p>in this lecture we learned about matrices multiplication:</p>
+<p>we can do that in five ways:</p>
+<ol>
+<li>row * col ==&gt; gives an entry (1 cell)</li>
+<li>col _ row ==&gt; sum ( r1 _ c1 , r2 * c2, etc)</li>
+<li>by columns ==&gt; A * c1 = combination of A columns</li>
+<li>by columns ==&gt; r1 * B = combination of A B rows</li>
+<li>by blocks ==&gt; A (A1,A2,A3,A4) _ B (B1,B2,B3,B4) = C1 = (A1_ B1 + A2 * B3) and so on</li>
+</ol>
+<p>then we learned about gausian-Jordan elimination to find the matrix inverse</p>]]></description></item></channel></rss>

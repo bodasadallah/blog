@@ -1,11 +1,245 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>python - Tag - Boda Blog</title><link>https://bodasadalla98.github.io/blog/tags/python/</link><description>python - Tag - Boda Blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>bodasadallah@gmail.com (Boda Sadallah)</managingEditor><webMaster>bodasadallah@gmail.com (Boda Sadallah)</webMaster><lastBuildDate>Tue, 10 Jan 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://bodasadalla98.github.io/blog/tags/python/" rel="self" type="application/rss+xml"/><item><title>A glimpse into PyTorch Autograd internals</title><link>https://bodasadalla98.github.io/blog/pytorch_internals/</link><pubDate>Tue, 10 Jan 2023 00:00:00 +0000</pubDate><author>Boda Sadallah</author><guid>https://bodasadalla98.github.io/blog/pytorch_internals/</guid><description><![CDATA[Intro Here, we are going to discuss the internals of PyTorch Autograd module. The most of us don&rsquo;t have to know about this. I was the same till I came across this error:
-1 unsupported operand type(s) for *: &#39;float&#39; and &#39;NoneType&#39; This came from executing the following code:
-1 2 3 4 5 6 import torch a = torch.tensor(5.0, requires_grad=True) * 0.1 b = torch.tensor(2.0, requires_grad=True) c = a + b c.]]></description></item><item><title>Univnet</title><link>https://bodasadalla98.github.io/blog/univnet/</link><pubDate>Mon, 07 Nov 2022 00:00:00 +0000</pubDate><author>Boda Sadallah</author><guid>https://bodasadalla98.github.io/blog/univnet/</guid><description>TTS (Text To Speech) TTS can be viewed as a sequence-to-sequence mapping problem; from a sequence of discrete symbols (text) to a real-valued time series (speech signals). A typical TTS pipeline has two parts; 1) text analysis and 2) speech synthesis. The text analysis part typically includes a number of natural language processing (NLP) steps, such as sentence segmentation, word segmentation, text normalization, part-of-speech (POS) tagging, and grapheme-to-phoneme (G2P) conversion. It takes a word sequence as input and outputs a phoneme sequence with a variety of linguistic contexts.</description></item><item><title>Distributed Training in PyTorch</title><link>https://bodasadalla98.github.io/blog/distributed_training/</link><pubDate>Thu, 11 Aug 2022 00:00:00 +0000</pubDate><author>Baraa, Boda</author><guid>https://bodasadalla98.github.io/blog/distributed_training/</guid><description>Distributed Training Why? Need more compute power to process large batches in parallel (DDP)
-Uses collective communication Large model that couldn’t be fit in memory of one GPU (RPC)
-Uses P2P communication All of the above XD
-DDP in Pytorch Every GPU has a model replica, controlled by a process. Every process fetches different batch of data. Forward. Overlapping between computation of and communication(broadcast - allreduced) of gradient. Validation 4 steps-recipe to Distributed Training Initialize Distributed Group 1 init_process_group(backend=&amp;#39;nccl&amp;#39;) Data Local Training 1 2 3 4 # Wrap train dataset into DataLoader train_loader = DataLoader(train_dataset, batch_size=batch_size) Distributed Training 1 2 3 4 5 6 7 8 9 10 # Create distributed sampler pinned to rank sampler = DistributedSampler(train_dataset, num_replicas=world_size, rank=rank, shuffle=True) # May be True # Wrap train dataset into DataLoader train_loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=False, # Must be False!</description></item><item><title>Programming Facts</title><link>https://bodasadalla98.github.io/blog/programming_facts/</link><pubDate>Mon, 23 May 2022 00:00:00 +0000</pubDate><author>Boda Sadallah</author><guid>https://bodasadalla98.github.io/blog/programming_facts/</guid><description><![CDATA[Intro this is intended to be some kind or reference to go through whenever I face some kind of bug, or error, that I don&rsquo;t know how to solve.usually these kinds of error that doesn&rsquo;t make sense, or we don&rsquo;t know the cause of them, and the worst it, that we don&rsquo;t find many ppl facing the same issue, so internet can&rsquo;t be so useful then. I learned theses facts the hard way, spending so much time trying to figure out the root of the issue.]]></description></item><item><title>Deep Learning Papers Summarization</title><link>https://bodasadalla98.github.io/blog/papers/</link><pubDate>Fri, 22 Apr 2022 00:00:00 +0000</pubDate><author>Boda Sadallah</author><guid>https://bodasadalla98.github.io/blog/papers/</guid><description>Decoupled Neural Interfaces using Synthetic Gradients In NN, the training process, has 3 bottle-necks forward lock: you need to calculate teh output of the previous layer before you can can go into next layer in forward pass backward pass: the same, but for backward propagation weights lock: you can&amp;rsquo;t update weights unless you do for weights in next layer the paper trying to unlock these bootle-necks by decoupling each layer, to be sufficient alone it does that by introducing, a Synthetic Gradient Model, that can predict the gradient for the current layer, without waiting for the gradient of the next layer this was we can calculate gradient and update weights as soon as we calculate the activation of the current layer Synthetic Gradient Model can be just a simple NN that is trained to output the gradient of the layer</description></item><item><title>Stanford CS224N NLP with Deep Learning</title><link>https://bodasadalla98.github.io/blog/stanford_nlp_cs224n/</link><pubDate>Tue, 08 Mar 2022 00:00:00 +0000</pubDate><author>Boda Sadallah</author><guid>https://bodasadalla98.github.io/blog/stanford_nlp_cs224n/</guid><description>Post for Stanford NLP Course</description></item><item><title>Applied Deep Learning</title><link>https://bodasadalla98.github.io/blog/applied_deep_learning/</link><pubDate>Tue, 01 Feb 2022 00:00:00 +0000</pubDate><author>Boda Sadallah</author><guid>https://bodasadalla98.github.io/blog/applied_deep_learning/</guid><description>Reference Course Repo with the slides, and course info Deep Learning overview we can look at deep learning as an algorithm that writes algorithms, like a compiler in this case the source code would be the data: (examples/experiences) excutable code would be the deployable model Deep: Functions compositions $ fl f{l-1} &amp;hellip;. f_1$
-Learning: Loss, Back-propagation, and Gradient Descent
-$ L(\theta) \approx J(\theta)$ &amp;ndash;&amp;gt; noisy estimate of the objective function due to mini-batching.</description></item><item><title>NLP Specialization</title><link>https://bodasadalla98.github.io/blog/coursera_nlp_specialization/</link><pubDate>Sun, 30 Jan 2022 00:00:00 +0000</pubDate><author>Boda Sadallah</author><guid>https://bodasadalla98.github.io/blog/coursera_nlp_specialization/</guid><description>Course 1: Classification and vector Spaces Weak 4 Hashing We can use hashing to search for the K-nearest vectors, to heavily reduce the searching space Locality senstive hashing the idea is to put items that are close in the vector space, in the same hashing buckets
-we can create a set of planes and calculate the relative position of points compated to this plane and then we can calculate the hash value for this point accordingly</description></item><item><title>Python</title><link>https://bodasadalla98.github.io/blog/python/</link><pubDate>Wed, 10 Nov 2021 00:00:00 +0000</pubDate><author>Boda Sadallah</author><guid>https://bodasadalla98.github.io/blog/python/</guid><description>Inheritance If you have inherited from parent class then you should call the parent class constructor if you overload it, or simply doesn&amp;rsquo;t overload it Ex:
-1 2 3 4 5 6 7 8 9 class parent: def __init__: class child: def __init__: super().__init__() class child2: ## or simply don&amp;#39;t override the constructor and use the parent one Multiple Inheritance when we inherit from two or more classes, whatever class we inherited first(typed first in the list), would be the one to have pariority</description></item><item><title>Scribbles</title><link>https://bodasadalla98.github.io/blog/scribbles/</link><pubDate>Wed, 27 Oct 2021 00:00:00 +0000</pubDate><author>Boda Sadallah</author><guid>https://bodasadalla98.github.io/blog/scribbles/</guid><description><![CDATA[Transformers To deal with sequential data we have to options:
-1-D convolution NN processing can be parallel not practical for long sequences Recurrent NN can&rsquo;t happen in prallel have gradient vanshing problem of the squence becomes so long we have bottleneck at the end of the encoder RNN with attention mechanism to solve the bottleneck problem, we make Encoder-Decoder attention Decoder utilzes: context vector weighted sum of hidden states (h1,h2, &hellip; ) from the encoder Transformers Encoder first we do input embedding, and positional embedding in self attention: we multiply q,w,v by a matrix to do lenear transformation self attentoion: k _ q &ndash;&gt; scaling down &ndash;&gt; softmax &ndash;&gt; _ v multi-head attention works as we use many filters in CNN in wide attention: it takes every word and spread it multi-head attention in narrow attention: it take every word and split it up across the multi-head but didnt we lose the adcantage of using multi-head as mutli prespectives, as we do with filters in CNN?]]></description></item></channel></rss>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Python - Tag - Boda Blog</title><link>https://bodasadalla98.github.io/blog/tags/python/</link><description>Python - Tag - Boda Blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>bodasadallah@gmail.com (Boda Sadallah)</managingEditor><webMaster>bodasadallah@gmail.com (Boda Sadallah)</webMaster><lastBuildDate>Tue, 10 Jan 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://bodasadalla98.github.io/blog/tags/python/" rel="self" type="application/rss+xml"/><item><title>A glimpse into PyTorch Autograd internals</title><link>https://bodasadalla98.github.io/blog/pytorch_internals/</link><pubDate>Tue, 10 Jan 2023 00:00:00 +0000</pubDate><author>Boda Sadallah</author><guid>https://bodasadalla98.github.io/blog/pytorch_internals/</guid><description><![CDATA[<h2 id="intro">Intro</h2>
+<p>Here, we are going to discuss the internals of PyTorch <code>Autograd</code> module. The most of us don&rsquo;t have to know about this. I was the same till I came across this error:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">unsupported operand type(s) for *: &#39;float&#39; and &#39;NoneType&#39;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>This came from executing the following code:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">torch</span>
+</span></span><span class="line"><span class="cl"><span class="n">a</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">(</span><span class="mf">5.0</span><span class="p">,</span> <span class="n">requires_grad</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="o">*</span> <span class="mf">0.1</span>
+</span></span><span class="line"><span class="cl"><span class="n">b</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">(</span><span class="mf">2.0</span><span class="p">,</span> <span class="n">requires_grad</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">c</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+</span></span><span class="line"><span class="cl"><span class="n">c</span><span class="o">.</span><span class="n">backward</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="n">a</span> <span class="o">+=</span> <span class="o">+</span> <span class="mf">0.1</span> <span class="o">*</span> <span class="n">a</span><span class="o">.</span><span class="n">grad</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>But why? We defined that the gradient of <code>a</code> should be calculated by putting <code>requires_grad</code> to be <code>True</code>!</p>]]></description></item><item><title>Univnet</title><link>https://bodasadalla98.github.io/blog/univnet/</link><pubDate>Mon, 07 Nov 2022 00:00:00 +0000</pubDate><author>Boda Sadallah</author><guid>https://bodasadalla98.github.io/blog/univnet/</guid><description>&lt;h1 id="tts-text-to-speech">TTS (Text To Speech)&lt;/h1>
+&lt;p>TTS can be viewed as a sequence-to-sequence mapping problem; from a sequence of discrete symbols
+(text) to a real-valued time series (speech signals). A typical TTS pipeline has two parts; 1)
+text analysis and 2) speech synthesis. The text analysis part typically includes a number of natural
+language processing (NLP) steps, such as sentence segmentation, word segmentation, text normalization,
+part-of-speech (POS) tagging, and grapheme-to-phoneme (G2P) conversion. It takes a word
+sequence as input and outputs a phoneme sequence with a variety of linguistic contexts. The speech
+synthesis part takes the context-dependent phoneme sequence as its input and outputs a synthesized
+speech waveform.&lt;/p></description></item><item><title>Distributed Training in PyTorch</title><link>https://bodasadalla98.github.io/blog/distributed_training/</link><pubDate>Thu, 11 Aug 2022 00:00:00 +0000</pubDate><author>Baraa, Boda</author><guid>https://bodasadalla98.github.io/blog/distributed_training/</guid><description><![CDATA[<h1 id="distributed-training">Distributed Training</h1>
+<h2 id="why">Why?</h2>
+<ul>
+<li>
+<p>Need more compute power to process large batches in parallel (DDP)</p>
+<ul>
+<li>Uses collective communication</li>
+</ul>
+</li>
+<li>
+<p>Large model that couldn’t be fit in memory of one GPU (RPC)</p>
+<ul>
+<li>Uses P2P communication</li>
+</ul>
+</li>
+<li>
+<p>All of the above XD</p>
+</li>
+</ul>
+<h2 id="ddp-in-pytorch">DDP in Pytorch</h2>
+<ul>
+<li>Every GPU has a model replica, controlled by a process.</li>
+<li>Every process fetches different batch of data.</li>
+<li>Forward.</li>
+<li>Overlapping between computation of  and communication(broadcast - allreduced) of gradient.</li>
+<li>Validation</li>
+</ul>
+<p align="center"> </p>]]></description></item><item><title>Programming Facts</title><link>https://bodasadalla98.github.io/blog/programming_facts/</link><pubDate>Mon, 23 May 2022 00:00:00 +0000</pubDate><author>Boda Sadallah</author><guid>https://bodasadalla98.github.io/blog/programming_facts/</guid><description><![CDATA[<h1 id="intro">Intro</h1>
+<ul>
+<li>this is intended to be some kind or reference to go through whenever I face some kind of bug, or error, that I don&rsquo;t know how to solve.usually these kinds of error that doesn&rsquo;t make sense, or we don&rsquo;t know the cause of them, and the worst it, that we don&rsquo;t find many ppl facing the same issue, so internet can&rsquo;t be so useful then.</li>
+<li>I learned theses facts the hard way, spending so much time trying to figure out the root of the issue.</li>
+</ul>
+<h1 id="debugging-facts">Debugging Facts</h1>
+<ul>
+<li>here are some tips, to help whenever you are facing some error, trying get a package to work, or you these kinds of error that takes you life few days, you know.</li>
+</ul>
+<h2 id="package-installation-issues">Package installation issues</h2>
+<h3 id="python-version">Python version</h3>
+<ul>
+<li>this might sound trivial, but every package version, only works with some python versions</li>
+<li>so you should run <code>pip install package-name==</code> to get the package versions supported by your python version</li>
+</ul>
+<h3 id="update-pip">Update Pip</h3>
+<ul>
+<li>whenever there&rsquo;s a dependency conflict, or versions conflict, and you can&rsquo;t install a package, then check your pip and update it if possible</li>
+<li>I spent like 4 days clueless why a simple package that I installed a week before, won&rsquo;t install now, like out of a sudden, it won&rsquo;t install anymore, due to dependency packages conflict</li>
+<li>when I upgraded pip, it simply worked</li>
+</ul>
+<h3 id="check-for-broken-installations">Check for broken installations</h3>
+<ul>
+<li>many times we would try to install some something, then for whatever reason, it wouldn&rsquo;t complete successful. But then we would try to install again, and we would encounter strange errors, that we don&rsquo;t know the root for them.</li>
+<li>there error could be because there&rsquo;s a broken installation, that messed things up.</li>
+<li>so, when we delete, or remove this broken installation, and install again, it just works.</li>
+</ul>]]></description></item><item><title>Deep Learning Papers Summarization</title><link>https://bodasadalla98.github.io/blog/papers/</link><pubDate>Fri, 22 Apr 2022 00:00:00 +0000</pubDate><author>Boda Sadallah</author><guid>https://bodasadalla98.github.io/blog/papers/</guid><description><![CDATA[<h2 id="decoupled-neural-interfaces-using-synthetic-gradients">Decoupled Neural Interfaces using Synthetic Gradients</h2>
+<ul>
+<li>In NN, the training process, has 3 bottle-necks
+<ul>
+<li>forward lock: you need to calculate teh output of the previous layer before you can can go into next layer in forward pass</li>
+<li>backward pass: the same, but for backward propagation</li>
+<li>weights lock: you can&rsquo;t update weights unless you do for weights in next layer</li>
+</ul>
+</li>
+<li>the paper trying to unlock these bootle-necks by decoupling each layer, to be sufficient alone</li>
+<li>it does that by introducing, a Synthetic Gradient Model, that can predict the gradient for the current layer, without waiting for the gradient of the next layer</li>
+<li>this was we can calculate gradient and update weights as soon as we calculate the activation of the current layer</li>
+</ul>
+<h3 id="synthetic-gradient-model">Synthetic Gradient Model</h3>
+<ul>
+<li>
+<p>can be just a simple NN that is trained to output the gradient of the layer</p>]]></description></item><item><title>Stanford CS224N NLP with Deep Learning</title><link>https://bodasadalla98.github.io/blog/stanford_nlp_cs224n/</link><pubDate>Tue, 08 Mar 2022 00:00:00 +0000</pubDate><author>Boda Sadallah</author><guid>https://bodasadalla98.github.io/blog/stanford_nlp_cs224n/</guid><description>Post for Stanford NLP Course</description></item><item><title>Applied Deep Learning</title><link>https://bodasadalla98.github.io/blog/applied_deep_learning/</link><pubDate>Tue, 01 Feb 2022 00:00:00 +0000</pubDate><author>Boda Sadallah</author><guid>https://bodasadalla98.github.io/blog/applied_deep_learning/</guid><description><![CDATA[<h2 id="reference">Reference</h2>
+<ul>
+<li><a href="https://github.com/maziarraissi/Applied-Deep-Learning" target="_blank" rel="noopener noreffer ">Course</a></li>
+<li><a href="https://github.com/maziarraissi/Applied-Deep-Learning" target="_blank" rel="noopener noreffer ">Repo with the slides, and course info</a></li>
+</ul>
+<h2 id="deep-learning-overview">Deep Learning overview</h2>
+<ul>
+<li>we can look at deep learning as an algorithm that writes algorithms, like a compiler</li>
+</ul>
+<ul>
+<li>in this case the source code would be the data: (examples/experiences)</li>
+<li>excutable code would be the deployable model</li>
+</ul>
+<ul>
+<li>
+<p>Deep: Functions compositions $ f<em>l f</em>{l-1} &hellip;. f_1$</p>
+</li>
+<li>
+<p>Learning: Loss, Back-propagation, and Gradient Descent</p>
+</li>
+<li>
+<p>$ L(\theta) \approx J(\theta)$ &ndash;&gt; noisy estimate of the objective function due to mini-batching. That&rsquo;s why we call it stochastic Gradient Descent</p>]]></description></item><item><title>NLP Specialization</title><link>https://bodasadalla98.github.io/blog/coursera_nlp_specialization/</link><pubDate>Sun, 30 Jan 2022 00:00:00 +0000</pubDate><author>Boda Sadallah</author><guid>https://bodasadalla98.github.io/blog/coursera_nlp_specialization/</guid><description><![CDATA[<h1 id="course-1-classification-and-vector-spaces">Course 1: Classification and vector Spaces</h1>
+<h2 id="weak-4">Weak 4</h2>
+<h3 id="hashing">Hashing</h3>
+<ul>
+<li>We can use hashing to search for the K-nearest vectors, to heavily reduce the searching space</li>
+</ul>
+<h4 id="locality-senstive-hashing">Locality senstive hashing</h4>
+<ul>
+<li>
+<p>the idea is to put items that are close in the vector space, in the same hashing buckets</p>
+</li>
+<li>
+<p>we can create a set of planes and calculate the relative position of points compated to this plane and then we can calculate the hash value for this point accordingly</p>]]></description></item><item><title>Python</title><link>https://bodasadalla98.github.io/blog/python/</link><pubDate>Wed, 10 Nov 2021 00:00:00 +0000</pubDate><author>Boda Sadallah</author><guid>https://bodasadalla98.github.io/blog/python/</guid><description><![CDATA[<h2 id="inheritance">Inheritance</h2>
+<ul>
+<li>If you have inherited from parent class then you should call the parent class constructor if you overload it, or simply doesn&rsquo;t overload it</li>
+</ul>
+<p>Ex:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">parent</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">child</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">child2</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">## or simply don&#39;t override the constructor and use the parent one</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="multiple-inheritance">Multiple Inheritance</h3>
+<ul>
+<li>
+<p>when we inherit from two or more classes, whatever class we inherited first(typed first in the list), would be the one to have pariority</p>]]></description></item><item><title>Scribbles</title><link>https://bodasadalla98.github.io/blog/scribbles/</link><pubDate>Wed, 27 Oct 2021 00:00:00 +0000</pubDate><author>Boda Sadallah</author><guid>https://bodasadalla98.github.io/blog/scribbles/</guid><description><![CDATA[<h2 id="transformers">Transformers</h2>
+<p>To deal with sequential data we have to options:</p>
+<ul>
+<li>1-D convolution NN
+<ul>
+<li>processing can be parallel</li>
+<li>not practical for long sequences</li>
+</ul>
+</li>
+<li>Recurrent NN
+<ul>
+<li>can&rsquo;t happen in prallel</li>
+<li>have gradient vanshing problem of the squence becomes so long</li>
+<li>we have bottleneck at the end of the encoder</li>
+</ul>
+</li>
+<li>RNN with attention mechanism
+<ul>
+<li>to solve the bottleneck problem, we make Encoder-Decoder attention</li>
+<li>Decoder utilzes:
+<ul>
+<li>context vector</li>
+<li>weighted sum of hidden states (h1,h2, &hellip; ) from the encoder</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="transformers-1">Transformers</h3>
+<h4 id="encoder">Encoder</h4>
+<ul>
+<li>first we do input embedding, and positional embedding</li>
+<li>in self attention: we multiply q,w,v by a matrix to do lenear transformation</li>
+<li>self attentoion: k _ q &ndash;&gt; scaling down &ndash;&gt; softmax &ndash;&gt; _ v</li>
+</ul>
+<h3 id="multi-head-attention">multi-head attention</h3>
+<ul>
+<li>works as we use many filters in CNN</li>
+<li>in wide attention: it takes every word and spread it multi-head attention</li>
+<li>in narrow attention: it take every word and split it up across the multi-head
+<ul>
+<li>but didnt we lose the adcantage of using multi-head as mutli prespectives, as we do with filters in CNN?</li>
+</ul>
+</li>
+</ul>
+<h3 id="positional-info">Positional info</h3>
+<ul>
+<li>positional encoding using the rotation sin/cos matrix</li>
+<li>positional embedding</li>
+</ul>
+<h3 id="residual-connections">Residual connections</h3>
+<ul>
+<li>to give the chance to skip some learning parameters if it&rsquo;s better to minimize the loss</li>
+</ul>
+<h3 id="layer-normalization">Layer Normalization</h3>
+<ul>
+<li>in batch normalization
+<ul>
+<li>==&gt; we normalize to zero mean and unity varince</li>
+<li>we calculate for all samples in each batch (for each channel )</li>
+</ul>
+</li>
+<li>in layer normalization
+<ul>
+<li>==&gt; $y = \gamma * x + \beta $ where gamm and bata are trainable parametes</li>
+<li>calculates for all channles in the same sample</li>
+</ul>
+</li>
+<li>in instance normalization ==&gt; calculate for one channel in one sample</li>
+</ul>
+<h2 id="debugging-ml-models">Debugging ML Models</h2>
+<ul>
+<li>
+<p>Understand bias-variance diagnoses</p>]]></description></item></channel></rss>

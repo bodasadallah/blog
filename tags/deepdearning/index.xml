@@ -1,1 +1,32 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>deepdearning - Tag - Boda Blog</title><link>https://bodasadalla98.github.io/blog/tags/deepdearning/</link><description>deepdearning - Tag - Boda Blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>bodasadallah@gmail.com (Boda Sadallah)</managingEditor><webMaster>bodasadallah@gmail.com (Boda Sadallah)</webMaster><lastBuildDate>Sun, 21 Nov 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://bodasadalla98.github.io/blog/tags/deepdearning/" rel="self" type="application/rss+xml"/><item><title>Voice Conversion</title><link>https://bodasadalla98.github.io/blog/voice_conversion/</link><pubDate>Sun, 21 Nov 2021 00:00:00 +0000</pubDate><author>Boda Sadallah</author><guid>https://bodasadalla98.github.io/blog/voice_conversion/</guid><description> AutoVC paper Demo Repo Speach Split Paper Demo repo AutoPST Paper Demo repo Sources IMPROVING ZERO-SHOT VOICE STYLE TRANSFER VIA DISENTANGLED REPRESENTATION LEARNING Voice Conversion Challenge 2020 results</description></item></channel></rss>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Deepdearning - Tag - Boda Blog</title><link>https://bodasadalla98.github.io/blog/tags/deepdearning/</link><description>Deepdearning - Tag - Boda Blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>bodasadallah@gmail.com (Boda Sadallah)</managingEditor><webMaster>bodasadallah@gmail.com (Boda Sadallah)</webMaster><lastBuildDate>Sun, 21 Nov 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://bodasadalla98.github.io/blog/tags/deepdearning/" rel="self" type="application/rss+xml"/><item><title>Voice Conversion</title><link>https://bodasadalla98.github.io/blog/voice_conversion/</link><pubDate>Sun, 21 Nov 2021 00:00:00 +0000</pubDate><author>Boda Sadallah</author><guid>https://bodasadalla98.github.io/blog/voice_conversion/</guid><description><![CDATA[<h1 id="heading"></h1>
+<h2 id="autovc">AutoVC</h2>
+<ul>
+<li><a href="https://arxiv.org/abs/1905.05879" target="_blank" rel="noopener noreffer ">paper</a></li>
+<li><a href="https://auspicious3000.github.io/autovc-demo/" target="_blank" rel="noopener noreffer ">Demo</a></li>
+<li><a href="https://github.com/auspicious3000/autovc" target="_blank" rel="noopener noreffer ">Repo</a></li>
+</ul>
+<h2 id="speach-split">Speach Split</h2>
+<ul>
+<li><a href="https://arxiv.org/abs/2004.11284" target="_blank" rel="noopener noreffer ">Paper</a></li>
+<li><a href="https://auspicious3000.github.io/SpeechSplit-Demo/" target="_blank" rel="noopener noreffer ">Demo</a></li>
+<li><a href="https://github.com/auspicious3000/SpeechSplit" target="_blank" rel="noopener noreffer ">repo</a></li>
+</ul>
+<h2 id="autopst">AutoPST</h2>
+<ul>
+<li><a href="https://arxiv.org/abs/2106.08519" target="_blank" rel="noopener noreffer ">Paper</a></li>
+<li><a href="https://auspicious3000.github.io/AutoPST-Demo/" target="_blank" rel="noopener noreffer ">Demo</a></li>
+<li><a href="https://github.com/auspicious3000/AutoPST" target="_blank" rel="noopener noreffer ">repo</a></li>
+</ul>
+<h2 id="sources">Sources</h2>
+<ul>
+<li><a href="https://openreview.net/pdf?id=TgSVWXw22FQ" target="_blank" rel="noopener noreffer ">IMPROVING ZERO-SHOT VOICE STYLE TRANSFER VIA
+DISENTANGLED REPRESENTATION LEARNING</a></li>
+<li><a href="https://www.youtube.com/watch?v=eDbfcFy1OEg" target="_blank" rel="noopener noreffer ">Voice Conversion Challenge 2020 results </a></li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"></code></pre></td></tr></table>
+</div>
+</div>]]></description></item></channel></rss>

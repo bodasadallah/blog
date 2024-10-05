@@ -1,4 +1,4 @@
-# 
+# You and your Research
 
 
 # You and your Research
@@ -6,7 +6,6 @@
 > https://www.cs.virginia.edu/~robins/YouAndYourResearch.html
 
 ## Main Ideas
-
 - Commit to your idea
 - Ask yourself: What are the important problems in my field?
 - Communicate with the bright minds
@@ -18,5 +17,5 @@
   - open door working
     - get many interruptions
     - get important clues
-  - My take on this, is we should keep an open mind about what other people are doing, and where the research is heading
+  - My take on this is we should keep an open mind about what other people are doing and where the research is heading
 

@@ -1,1 +1,27 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>programming - Tag - Boda Blog</title><link>https://bodasadalla98.github.io/blog/tags/programming/</link><description>programming - Tag - Boda Blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>bodasadallah@gmail.com (Boda Sadallah)</managingEditor><webMaster>bodasadallah@gmail.com (Boda Sadallah)</webMaster><lastBuildDate>Mon, 23 May 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://bodasadalla98.github.io/blog/tags/programming/" rel="self" type="application/rss+xml"/><item><title>Programming Facts</title><link>https://bodasadalla98.github.io/blog/programming_facts/</link><pubDate>Mon, 23 May 2022 00:00:00 +0000</pubDate><author>Boda Sadallah</author><guid>https://bodasadalla98.github.io/blog/programming_facts/</guid><description><![CDATA[Intro this is intended to be some kind or reference to go through whenever I face some kind of bug, or error, that I don&rsquo;t know how to solve.usually these kinds of error that doesn&rsquo;t make sense, or we don&rsquo;t know the cause of them, and the worst it, that we don&rsquo;t find many ppl facing the same issue, so internet can&rsquo;t be so useful then. I learned theses facts the hard way, spending so much time trying to figure out the root of the issue.]]></description></item></channel></rss>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Programming - Tag - Boda Blog</title><link>https://bodasadalla98.github.io/blog/tags/programming/</link><description>Programming - Tag - Boda Blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>bodasadallah@gmail.com (Boda Sadallah)</managingEditor><webMaster>bodasadallah@gmail.com (Boda Sadallah)</webMaster><lastBuildDate>Mon, 23 May 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://bodasadalla98.github.io/blog/tags/programming/" rel="self" type="application/rss+xml"/><item><title>Programming Facts</title><link>https://bodasadalla98.github.io/blog/programming_facts/</link><pubDate>Mon, 23 May 2022 00:00:00 +0000</pubDate><author>Boda Sadallah</author><guid>https://bodasadalla98.github.io/blog/programming_facts/</guid><description><![CDATA[<h1 id="intro">Intro</h1>
+<ul>
+<li>this is intended to be some kind or reference to go through whenever I face some kind of bug, or error, that I don&rsquo;t know how to solve.usually these kinds of error that doesn&rsquo;t make sense, or we don&rsquo;t know the cause of them, and the worst it, that we don&rsquo;t find many ppl facing the same issue, so internet can&rsquo;t be so useful then.</li>
+<li>I learned theses facts the hard way, spending so much time trying to figure out the root of the issue.</li>
+</ul>
+<h1 id="debugging-facts">Debugging Facts</h1>
+<ul>
+<li>here are some tips, to help whenever you are facing some error, trying get a package to work, or you these kinds of error that takes you life few days, you know.</li>
+</ul>
+<h2 id="package-installation-issues">Package installation issues</h2>
+<h3 id="python-version">Python version</h3>
+<ul>
+<li>this might sound trivial, but every package version, only works with some python versions</li>
+<li>so you should run <code>pip install package-name==</code> to get the package versions supported by your python version</li>
+</ul>
+<h3 id="update-pip">Update Pip</h3>
+<ul>
+<li>whenever there&rsquo;s a dependency conflict, or versions conflict, and you can&rsquo;t install a package, then check your pip and update it if possible</li>
+<li>I spent like 4 days clueless why a simple package that I installed a week before, won&rsquo;t install now, like out of a sudden, it won&rsquo;t install anymore, due to dependency packages conflict</li>
+<li>when I upgraded pip, it simply worked</li>
+</ul>
+<h3 id="check-for-broken-installations">Check for broken installations</h3>
+<ul>
+<li>many times we would try to install some something, then for whatever reason, it wouldn&rsquo;t complete successful. But then we would try to install again, and we would encounter strange errors, that we don&rsquo;t know the root for them.</li>
+<li>there error could be because there&rsquo;s a broken installation, that messed things up.</li>
+<li>so, when we delete, or remove this broken installation, and install again, it just works.</li>
+</ul>]]></description></item></channel></rss>
