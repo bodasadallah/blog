@@ -1,8 +1,8 @@
 ---
-title: ""
+title: "You and your Research"
 subtitle: ""
 description: ""
-date: ""
+date: "2023-05-05"
 tags: []
 categories: []
 
@@ -20,7 +20,6 @@ draft: false
 > https://www.cs.virginia.edu/~robins/YouAndYourResearch.html
 
 ## Main Ideas
-
 - Commit to your idea
 - Ask yourself: What are the important problems in my field?
 - Communicate with the bright minds
@@ -32,4 +31,4 @@ draft: false
   - open door working
     - get many interruptions
     - get important clues
-  - My take on this, is we should keep an open mind about what other people are doing, and where the research is heading
+  - My take on this is we should keep an open mind about what other people are doing and where the research is heading
