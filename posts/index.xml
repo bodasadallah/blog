@@ -1,10 +1,14 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>All Posts - Boda Blog</title><link>https://bodasadalla98.github.io/blog/posts/</link><description>All Posts | Boda Blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>bodasadallah@gmail.com (Boda Sadallah)</managingEditor><webMaster>bodasadallah@gmail.com (Boda Sadallah)</webMaster><lastBuildDate>Sat, 05 Oct 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://bodasadalla98.github.io/blog/posts/" rel="self" type="application/rss+xml"/><item><title>Can we save peer-review quality?</title><link>https://bodasadalla98.github.io/blog/peer_review/</link><pubDate>Sat, 05 Oct 2024 00:00:00 +0000</pubDate><author>Boda Sadallah</author><guid>https://bodasadalla98.github.io/blog/peer_review/</guid><description><![CDATA[<h1 id="what-is-peer-review">What is Peer-review</h1>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>All Posts - Boda Blog</title><link>https://bodasadalla98.github.io/blog/posts/</link><description>All Posts | Boda Blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sun, 30 Mar 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://bodasadalla98.github.io/blog/posts/" rel="self" type="application/rss+xml"/><item><title>First Reviewing Experience</title><link>https://bodasadalla98.github.io/blog/first_review/</link><pubDate>Sun, 30 Mar 2025 00:00:00 +0000</pubDate><author>Boda Sadallah</author><guid>https://bodasadalla98.github.io/blog/first_review/</guid><description><![CDATA[<p>I have just submitted two reviews for the ACL 2025 conference, and overall, I would say it was a positive experience. It was partially an eye-opener and also a confirmation of some problems in our current reviewing system. So far, my whole experience with reviews has been from two dimensions:</p>
+<ol>
+<li>As an author, I received a few reviews—some were informative and insightful, while others were unfair and low-effort.</li>
+<li>As an &ldquo;evaluator,&rdquo; as this is my current research topic—Peer Review Evaluation.</li>
+</ol>
+<p>What&rsquo;s new this time is that I got to write reviews. In the beginning, I was anxious, as this was something new to me, and I didn&rsquo;t know how to approach it. But the <a href="https://aclrollingreview.org/reviewerguidelines" target="_blank" rel="noopener noreffer ">ACL Reviewer Guidelines</a> do a great job explaining what should and shouldn&rsquo;t be done. Another burden was that this is my area of research—&ldquo;How to Write Good Reviews?&quot;—so I felt the responsibility to apply everything I have been promoting in my reviews.</p>]]></description></item><item><title>Can we save peer-review quality?</title><link>https://bodasadalla98.github.io/blog/peer_review/</link><pubDate>Sat, 05 Oct 2024 00:00:00 +0000</pubDate><author>Boda Sadallah</author><guid>https://bodasadalla98.github.io/blog/peer_review/</guid><description><![CDATA[<h1 id="what-is-peer-review">What is Peer-review</h1>
 <p>Peer-review is a corner-stone in scientific research. It serves a quality check for scientific drafts. It is formally defined as: <code>Peer review is the evaluation of work by one or more people with similar competencies as the producers of the work.</code></p>
 <h1 id="why-is-it-important">Why is it important</h1>
 <p>It&rsquo;s important as, only after an article passes peer review can it be officially published, and it&rsquo;s the knowledge shared with the scientific community and the world.</p>]]></description></item><item><title>You and your Research</title><link>https://bodasadalla98.github.io/blog/reading_summary/</link><pubDate>Fri, 05 May 2023 00:00:00 +0000</pubDate><author>Boda Sadallah</author><guid>https://bodasadalla98.github.io/blog/reading_summary/</guid><description><![CDATA[<h1 id="you-and-your-research">You and your Research</h1>
 <blockquote>
-<p><a href="https://www.cs.virginia.edu/~robins/YouAndYourResearch.html" target="_blank" rel="noopener noreffer ">https://www.cs.virginia.edu/~robins/YouAndYourResearch.html</a></p>
-</blockquote>
+<p><a href="https://www.cs.virginia.edu/~robins/YouAndYourResearch.html" target="_blank" rel="noopener noreffer ">https://www.cs.virginia.edu/~robins/YouAndYourResearch.html</a></p></blockquote>
 <h2 id="main-ideas">Main Ideas</h2>
 <ul>
 <li>Commit to your idea</li>
@@ -30,34 +34,25 @@
 </li>
 </ul>]]></description></item><item><title>A glimpse into PyTorch Autograd internals</title><link>https://bodasadalla98.github.io/blog/pytorch_internals/</link><pubDate>Tue, 10 Jan 2023 00:00:00 +0000</pubDate><author>Boda Sadallah</author><guid>https://bodasadalla98.github.io/blog/pytorch_internals/</guid><description><![CDATA[<h2 id="intro">Intro</h2>
 <p>Here, we are going to discuss the internals of PyTorch <code>Autograd</code> module. The most of us don&rsquo;t have to know about this. I was the same till I came across this error:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">unsupported operand type(s) for *: &#39;float&#39; and &#39;NoneType&#39;
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>This came from executing the following code:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">torch</span>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="Copy to clipboard"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">unsupported operand type(s) for *: &#39;float&#39; and &#39;NoneType&#39;</span></span></code></pre></div></div>
+<p>This came from executing the following code:</p>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-python">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="Copy to clipboard"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">torch</span>
 </span></span><span class="line"><span class="cl"><span class="n">a</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">(</span><span class="mf">5.0</span><span class="p">,</span> <span class="n">requires_grad</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="o">*</span> <span class="mf">0.1</span>
 </span></span><span class="line"><span class="cl"><span class="n">b</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">(</span><span class="mf">2.0</span><span class="p">,</span> <span class="n">requires_grad</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="n">c</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
 </span></span><span class="line"><span class="cl"><span class="n">c</span><span class="o">.</span><span class="n">backward</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl"><span class="n">a</span> <span class="o">+=</span> <span class="o">+</span> <span class="mf">0.1</span> <span class="o">*</span> <span class="n">a</span><span class="o">.</span><span class="n">grad</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>But why? We defined that the gradient of <code>a</code> should be calculated by putting <code>requires_grad</code> to be <code>True</code>!</p>]]></description></item><item><title>Univnet</title><link>https://bodasadalla98.github.io/blog/univnet/</link><pubDate>Mon, 07 Nov 2022 00:00:00 +0000</pubDate><author>Boda Sadallah</author><guid>https://bodasadalla98.github.io/blog/univnet/</guid><description>&lt;h1 id="tts-text-to-speech">TTS (Text To Speech)&lt;/h1>
+</span></span><span class="line"><span class="cl"><span class="n">a</span> <span class="o">+=</span> <span class="o">+</span> <span class="mf">0.1</span> <span class="o">*</span> <span class="n">a</span><span class="o">.</span><span class="n">grad</span></span></span></code></pre></div></div>
+<p>But why? We defined that the gradient of <code>a</code> should be calculated by putting <code>requires_grad</code> to be <code>True</code>!</p>]]></description></item><item><title>Univnet</title><link>https://bodasadalla98.github.io/blog/univnet/</link><pubDate>Mon, 07 Nov 2022 00:00:00 +0000</pubDate><author>Boda Sadallah</author><guid>https://bodasadalla98.github.io/blog/univnet/</guid><description>&lt;h1 id="tts-text-to-speech">TTS (Text To Speech)&lt;/h1>
 &lt;p>TTS can be viewed as a sequence-to-sequence mapping problem; from a sequence of discrete symbols
 (text) to a real-valued time series (speech signals). A typical TTS pipeline has two parts; 1)
 text analysis and 2) speech synthesis. The text analysis part typically includes a number of natural
@@ -179,25 +174,4 @@ speech waveform.&lt;/p></description></item><item><title>Distributed Training in
 <ul>
 <li>rebase puts the commits of the second brach on top of the common ancesstor commit then rebase the commits of the first branch on top of the last commit of the first branch, then it changes the history of commits</li>
 </ul>
-<p><strong>Only use rebase to clean local commit history, don&rsquo;t use rebase on commits that is pushed to online</strong></p>]]></description></item><item><title>Stanford CS224N NLP with Deep Learning</title><link>https://bodasadalla98.github.io/blog/stanford_nlp_cs224n/</link><pubDate>Tue, 08 Mar 2022 00:00:00 +0000</pubDate><author>Boda Sadallah</author><guid>https://bodasadalla98.github.io/blog/stanford_nlp_cs224n/</guid><description>Post for Stanford NLP Course</description></item><item><title>Applied Deep Learning</title><link>https://bodasadalla98.github.io/blog/applied_deep_learning/</link><pubDate>Tue, 01 Feb 2022 00:00:00 +0000</pubDate><author>Boda Sadallah</author><guid>https://bodasadalla98.github.io/blog/applied_deep_learning/</guid><description><![CDATA[<h2 id="reference">Reference</h2>
-<ul>
-<li><a href="https://github.com/maziarraissi/Applied-Deep-Learning" target="_blank" rel="noopener noreffer ">Course</a></li>
-<li><a href="https://github.com/maziarraissi/Applied-Deep-Learning" target="_blank" rel="noopener noreffer ">Repo with the slides, and course info</a></li>
-</ul>
-<h2 id="deep-learning-overview">Deep Learning overview</h2>
-<ul>
-<li>we can look at deep learning as an algorithm that writes algorithms, like a compiler</li>
-</ul>
-<ul>
-<li>in this case the source code would be the data: (examples/experiences)</li>
-<li>excutable code would be the deployable model</li>
-</ul>
-<ul>
-<li>
-<p>Deep: Functions compositions $ f<em>l f</em>{l-1} &hellip;. f_1$</p>
-</li>
-<li>
-<p>Learning: Loss, Back-propagation, and Gradient Descent</p>
-</li>
-<li>
-<p>$ L(\theta) \approx J(\theta)$ &ndash;&gt; noisy estimate of the objective function due to mini-batching. That&rsquo;s why we call it stochastic Gradient Descent</p>]]></description></item></channel></rss>
+<p><strong>Only use rebase to clean local commit history, don&rsquo;t use rebase on commits that is pushed to online</strong></p>]]></description></item><item><title>Stanford CS224N NLP with Deep Learning</title><link>https://bodasadalla98.github.io/blog/stanford_nlp_cs224n/</link><pubDate>Tue, 08 Mar 2022 00:00:00 +0000</pubDate><author>Boda Sadallah</author><guid>https://bodasadalla98.github.io/blog/stanford_nlp_cs224n/</guid><description>Post for Stanford NLP Course</description></item></channel></rss>

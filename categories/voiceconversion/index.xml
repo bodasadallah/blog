@@ -1,4 +1,4 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>VoiceConversion - Category - Boda Blog</title><link>https://bodasadalla98.github.io/blog/categories/voiceconversion/</link><description>VoiceConversion - Category - Boda Blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>bodasadallah@gmail.com (Boda Sadallah)</managingEditor><webMaster>bodasadallah@gmail.com (Boda Sadallah)</webMaster><lastBuildDate>Sun, 21 Nov 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://bodasadalla98.github.io/blog/categories/voiceconversion/" rel="self" type="application/rss+xml"/><item><title>Voice Conversion</title><link>https://bodasadalla98.github.io/blog/voice_conversion/</link><pubDate>Sun, 21 Nov 2021 00:00:00 +0000</pubDate><author>Boda Sadallah</author><guid>https://bodasadalla98.github.io/blog/voice_conversion/</guid><description><![CDATA[<h1 id="heading"></h1>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>VoiceConversion - Category - Boda Blog</title><link>https://bodasadalla98.github.io/blog/categories/voiceconversion/</link><description>VoiceConversion - Category - Boda Blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sun, 21 Nov 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://bodasadalla98.github.io/blog/categories/voiceconversion/" rel="self" type="application/rss+xml"/><item><title>Voice Conversion</title><link>https://bodasadalla98.github.io/blog/voice_conversion/</link><pubDate>Sun, 21 Nov 2021 00:00:00 +0000</pubDate><author>Boda Sadallah</author><guid>https://bodasadalla98.github.io/blog/voice_conversion/</guid><description><![CDATA[<h1></h1>
 <h2 id="autovc">AutoVC</h2>
 <ul>
 <li><a href="https://arxiv.org/abs/1905.05879" target="_blank" rel="noopener noreffer ">paper</a></li>
@@ -23,10 +23,9 @@
 DISENTANGLED REPRESENTATION LEARNING</a></li>
 <li><a href="https://www.youtube.com/watch?v=eDbfcFy1OEg" target="_blank" rel="noopener noreffer ">Voice Conversion Challenge 2020 results </a></li>
 </ul>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"></code></pre></td></tr></table>
-</div>
-</div>]]></description></item></channel></rss>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-python">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="Copy to clipboard"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"></code></pre></div></div>]]></description></item></channel></rss>
